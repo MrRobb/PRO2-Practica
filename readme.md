@@ -30,7 +30,7 @@
 - Árbol binario
 
 	Individuo  
-	/            \\     
+	/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\     
    Padre       Madre      
    /      \\          /      \\      
 Abuelos     Abuelos       
