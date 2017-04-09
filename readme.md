@@ -29,8 +29,10 @@
 
 - Árbol binario
 
-\<iframe src="http://onodo.org/visualizations/11326/embed/" width="100%" height="450px" scrolling="no" marginheight="0" frameborder="0" allowfullscreen\>\</iframe\>
+![Binary Tree][1]
 
 - `Ap` No vacío + Estructura de `Ap` ==  Estructura de algún subconjunto conexo de un árbol `Ag` —\> **`Ap` árbol parcial de `Ag`**
 - **Completar(`Ap`)** —\> `Ac` (copia de `Ag`)
 	- A los nodos de `Ac` pero no en `Ap` se les añadirá una marca especial con respecto a su valor en `Ag`.
+
+[1]:	https://cloud.githubusercontent.com/assets/7969569/24838861/b1e92926-1d50-11e7-810e-a5e49685d771.png "Binary Tree"
