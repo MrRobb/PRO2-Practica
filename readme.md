@@ -29,10 +29,24 @@
 
 - Árbol binario
 
-![Binary Tree][1]
+![Binary Tree][image-1]
 
 - `Ap` No vacío + Estructura de `Ap` ==  Estructura de algún subconjunto conexo de un árbol `Ag` —\> **`Ap` árbol parcial de `Ag`**
 - **Completar(`Ap`)** —\> `Ac` (copia de `Ag`)
 	- A los nodos de `Ac` pero no en `Ap` se les añadirá una marca especial con respecto a su valor en `Ag`.
 
-[1]:	https://cloud.githubusercontent.com/assets/7969569/24838861/b1e92926-1d50-11e7-810e-a5e49685d771.png "Binary Tree"
+# Sistema a Simular
+Inicializar el sistema con los datos genéticos de la especie.
+- `N`
+	- `li`
+	- `lx`
+	- `ly`
+- Leer los datos de una población inicial:
+	- `M`: Número inicial de individuos sin ascendientes (sin parentesco)
+	- `name`: Un nombre para cada individuo (todos diferentes)
+	- Composición genética de los individuos (`X` ó `Y` + contenido de los cromosomas(sexuales `(X + (X ó Y)) + normales)`)
+1. **Añadir** individuo sin ascendientes: los datos son los mismos que los de los `M` iniciales. `Error:` Si ya existe un individuo con ese nombre
+2. **Reproducir**: Dados `madre`, `padre` y `hijo` (nombres). Se intenta realizar una reproducción.
+(Continuará…)
+
+[image-1]:	https://cloud.githubusercontent.com/assets/7969569/24838861/b1e92926-1d50-11e7-810e-a5e49685d771.png "Binary Tree"
