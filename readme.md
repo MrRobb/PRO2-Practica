@@ -31,8 +31,8 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;Individuo  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\     
-&nbsp;&nbsp;&nbsp;&nbsp;Padre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Madre      
-   /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\      
+&nbsp;&nbsp;&nbsp;Padre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Madre      
+&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\      
 Abuelos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Abuelos       
 Paternos&nbsp;&nbsp;&nbsp;Maternos     
 
