@@ -29,14 +29,8 @@
 
 - Árbol binario
 
-&nbsp;&nbsp;&nbsp;&nbsp;Individuo  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\     
-&nbsp;&nbsp;&nbsp;Padre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Madre      
-&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\      
-Abuelos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Abuelos       
-Paternos&nbsp;&nbsp;&nbsp;Maternos     
+\<iframe src="http://onodo.org/visualizations/11326/embed/" width="100%" height="450px" scrolling="no" marginheight="0" frameborder="0" allowfullscreen\>\</iframe\>
 
 - `Ap` No vacío + Estructura de `Ap` ==  Estructura de algún subconjunto conexo de un árbol `Ag` —\> **`Ap` árbol parcial de `Ag`**
 - **Completar(`Ap`)** —\> `Ac` (copia de `Ag`)
 	- A los nodos de `Ac` pero no en `Ap` se les añadirá una marca especial con respecto a su valor en `Ag`.
-
