@@ -5,7 +5,7 @@
 
 ## Individuo
 
-| Variable  | Meaning   |
+| Variable  | Significado   |
 |:---------:    |:--------------------------------------------------------: |
 | `N + X + Y`     | `N` cromosomas normales + Dos cromosomas sexuales   |
 | `pi`    | Par de cromosomas `i` (normales). Compuesto de `ci1` y `ci2` (ambos de longitud `li`).    |
@@ -25,4 +25,18 @@
 	- **Sexuales:** la madre transmite el `X` y el padre puede transmitir un `X` o un `Y`.
 		- El cruzamiento sólo se realiza en la parte común a ambos cromosomas (entre 1 y `l0`, con el punto de corte `k` entre 0 y `l0`) mientras que el resto de genes de los cromosomas `c01` y `c02` pasan directamente a los cromosomas `c01'` y `c02'`.
 
-			 
+## Árbol genealógico
+
+- Árbol binario
+
+	Individuo
+	/            \\
+   Padre       Madre
+   /      \\          /      \\
+Abuelos     Abuelos
+Paternos   Maternos
+
+- `Ap` No vacío + Estructura de `Ap` ==  Estructura de algún subconjunto conexo de un árbol `Ag` —\> **`Ap` árbol parcial de `Ag`**
+- **Completar(`Ap`)** —\> `Ac` (copia de `Ag`)
+	- A los nodos de `Ac` pero no en `Ap` se les añadirá una marca especial con respecto a su valor en `Ag`.
+
