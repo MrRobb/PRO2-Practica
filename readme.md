@@ -29,12 +29,12 @@
 
 - Árbol binario
 
-	Individuo  
-	/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\     
-   Padre       Madre      
+&nbsp;&nbsp;&nbsp;&nbsp;Individuo  
+/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\     
+&nbsp;&nbsp;&nbsp;&nbsp;Padre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Madre      
    /      \\          /      \\      
-Abuelos     Abuelos       
-Paternos   Maternos     
+Abuelos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Abuelos       
+Paternos&nbsp;&nbsp;&nbsp;Maternos     
 
 - `Ap` No vacío + Estructura de `Ap` ==  Estructura de algún subconjunto conexo de un árbol `Ag` —\> **`Ap` árbol parcial de `Ag`**
 - **Completar(`Ap`)** —\> `Ac` (copia de `Ag`)
