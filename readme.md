@@ -53,4 +53,11 @@ Inicializar el sistema con los datos genéticos de la especie.
 - **Escribir individuo**
 - **Acabar**
 
-[image-1]:	https://cloud.githubusercontent.com/assets/7969569/24838861/b1e92926-1d50-11e7-810e-a5e49685d771.png "Binary Tree"
+# Especificación
+![Structure][image-2]   
+
+
+[image-1]:	https://cloud.githubusercontent.com/assets/7969569/24838861/b1e92926-1d50-11e7-810e-a5e49685d771.png "Binary Tree"   
+
+[image-2]:
+https://github.com/MrRobb/PRO2-Practica/blob/master/Especificación.png?raw=true "Structure"
