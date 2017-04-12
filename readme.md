@@ -60,4 +60,4 @@ Inicializar el sistema con los datos genéticos de la especie.
 [image-1]:	https://cloud.githubusercontent.com/assets/7969569/24838861/b1e92926-1d50-11e7-810e-a5e49685d771.png "Binary Tree"   
 
 [image-2]:
-https://github.com/MrRobb/PRO2-Practica/blob/master/Especificación.png?raw=true "Structure"
+https://cloud.githubusercontent.com/assets/7969569/24954360/610f16ba-1f7f-11e7-8e02-efe254a998e4.png "Structure"
