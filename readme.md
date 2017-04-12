@@ -45,8 +45,12 @@ Inicializar el sistema con los datos genéticos de la especie.
 	- `M`: Número inicial de individuos sin ascendientes (sin parentesco)
 	- `name`: Un nombre para cada individuo (todos diferentes)
 	- Composición genética de los individuos (`X` ó `Y` + contenido de los cromosomas(sexuales `(X + (X ó Y)) + normales)`)
-1. **Añadir** individuo sin ascendientes: los datos son los mismos que los de los `M` iniciales. `Error:` Si ya existe un individuo con ese nombre
-2. **Reproducir**: Dados `madre`, `padre` y `hijo` (nombres). Se intenta realizar una reproducción.
-(Continuará…)
+- **Añadir individuo sin ascendientes**: los datos son los mismos que los de los `M` iniciales. `Error:` Si ya existe un individuo con ese nombre
+- **Reproducir**: Dados `madre`, `padre` y `hijo` (nombres). Se intenta realizar una reproducción.
+- **Escribir árbol**
+- **Árbol incompleto?**
+- **Escribir todos los individuos**
+- **Escribir individuo**
+- **Acabar**
 
 [image-1]:	https://cloud.githubusercontent.com/assets/7969569/24838861/b1e92926-1d50-11e7-810e-a5e49685d771.png "Binary Tree"
