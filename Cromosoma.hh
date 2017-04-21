@@ -1,18 +1,18 @@
 //
-//  Cromosoma.hpp
+//  Cromosoma.hh
 //  PRO2
 //
-//  Created by Roberto Ariosa Hernández.
+//  Created by Roberto Ariosa Hernandez.
 //
 
-#ifndef Cromosoma_hpp
-#define Cromosoma_hpp
+#ifndef Cromosoma_hh
+#define Cromosoma_hh
 
 #include <vector>
 
 using namespace std;
 
-#endif /* Cromosoma_hpp */
+#endif /* Cromosoma_hh */
 
 class Cromosoma {
   
