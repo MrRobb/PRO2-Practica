@@ -33,4 +33,30 @@ private:
   
 public:
   
+  // Constructores
+  
+  Especie();
+  
+  // Destructora
+  
+  ~Especie();
+  
+  // Modificadores
+  
+  // Consultores
+  
+  int pares_cromosomas() const;
+  
+  int longitud_cromosoma_normal() const;
+  
+  int longitud_cromosoma_x() const;
+  
+  int longitud_cromosoma_y() const;
+  
+  // Lectura y escritura
+  
+  void leer();
+  
+  void escribir();
+  
 };
