@@ -8,11 +8,10 @@
 #ifndef Cromosoma_hh
 #define Cromosoma_hh
 
+#include "Especie.hh"
 #include <vector>
 
 using namespace std;
-
-#endif /* Cromosoma_hh */
 
 class Cromosoma {
   
@@ -22,7 +21,6 @@ class Cromosoma {
   // li puede ser un entero positivo cualquiera
   
 private:
-  int li;
   vector<int> c;
   
   /*
@@ -54,8 +52,15 @@ public:
   
   // Lectura y escritura
   
-  void leer();
+  void leer(int li);
+  /*
+   PRE: La informacion del cromosoma se lee en el siguiente orden:
+     1. Se leen un total de li (li >= 1) enteros positivos.
+   POST: Se almacenan los datos leidos en el cromosoma.
+   */
   
   void escribir() const;
   
 };
+
+#endif /* Cromosoma_hh */
