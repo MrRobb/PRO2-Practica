@@ -45,7 +45,7 @@ void Individuo::leer(const Especie &esp){
 
 void Individuo::escribir() const {
   // Nombre
-  cout << nombre << ' ';
+  cout << "  " << nombre << ' ';
   
   // Sexo
   if(es_masculino) cout << "XY ";
@@ -57,5 +57,28 @@ void Individuo::escribir() const {
   }
   else {
     cout << "(" << padre << "," << madre << ")" << endl;
+  }
+}
+
+void Individuo::escribir_genotipo() const {
+  // Sexuales
+  cout << "X:"; adn[0].first.escribir(); cout << endl;;
+  
+  if(es_masculino) {
+    cout << "Y:"; adn[0].second.escribir(); cout << endl;
+  }
+  else {
+    cout << "X:"; adn[0].second.escribir(); cout << endl;
+  }
+  
+  // Normales
+  int size = int(adn.size());
+  for(int i = 1; i < size; ++i){
+    for(int j = 1; j <= 2; ++j){
+      cout << i << '.' << j << ':';
+      if(j == 1) adn[i].first.escribir();
+      else adn[i].second.escribir();
+      cout << endl;
+    }
   }
 }

@@ -43,11 +43,11 @@ public:
   
   // Modificadores
   
-  void anadir_individuo(const Individuo &ind, bool &b);
+  void anadir_individuo(const Individuo &ind);
   /*
-   PRE: ind es un individuo valido. b es un booleano de control.
+   PRE: ind es un individuo valido.
    
-   POST: si se ha añadido correctamente el individuo b == false y si no se ha añadido b == true.
+   POST: Si no se ha añadido correctamente saldra un mensaje de error.
    */
   
   // Consultores
@@ -73,6 +73,13 @@ public:
   /*
    PRE: cierto.
    POST: Se escriben todos los individuos de la poblacion.
+   */
+  
+  void escribir_genotipo(string nombre) const;
+  /*
+   PRE: nombre es el nombre del individuo a escribir.
+   
+   POST: Se busca al individuo, y si existe se escribe su genotipo.
    */
   
   void escribir_arbol(string ind);

@@ -76,6 +76,13 @@ public:
    POST: Se escribe el nombre del individuo, el sexo, y los padres (si no tiene son $).
    */
   
+  void escribir_genotipo() const;
+  /*
+   PRE: cierto.
+   
+   POST: Se escriben los cromosomas del individuo por orden creciente, por orden creciente de identificador de par de cromosomas (primero el par de cromosomas sexuales y luego los N pares de cromosomas normales); dentro de cada par, primero se escribira el primer cromosoma y luego el segundo; dentro de cada cromosoma, se escribiran los valores de los genes por orden creciente de posicion. Para cada par de cromosomas, el orden entre los dos cromosomas depende de si el individuo tiene progenitores conocidos o no. Si se trata de un individuo sin ascendientes, el orden de escritura sera el mismo que el orden en que se leyeron los dos cromosomas. Si se trata de un individuo con ascendientes, primero se escribira c′i1 y luego c′i2, resultado del cruce entre ci1 y ci2, donde ci1 es el cromosoma proveniente del ovulo (celula de la madre) y ci2 el cromosoma proveniente del espermatozoide (celula del padre).
+   */
+  
 };
 
 #endif /* Individuo_hh */

@@ -20,13 +20,11 @@ int main() {
   
   string s;
   while (cin >> s and s != "acabar") {
-    bool b;
     if (s == "anadir_individuo") {
       Individuo(ind);
       ind.leer(esp);
-      pob.anadir_individuo(ind, b);
-      if(b) cout << "error" << endl;
-      else  cout << "added" << endl;
+      cout << "anadir_individuo " << ind.consultar_nombre() << endl;
+      pob.anadir_individuo(ind);
     }
     else if (s == "reproduccion_sexual"){
       // REPRODUCIR
@@ -38,10 +36,13 @@ int main() {
       // COMPLETAR ARBOL
     }
     else if (s == "escribir_poblacion"){
+      cout << "escribir_poblacion" << endl;
       pob.escribir();
     }
     else if (s == "escribir_genotipo"){
-      // ESCRIBIR GENOTIPO
+      string s; cin >> s;
+      cout << "escribir_genotipo " << s << endl;
+      pob.escribir_genotipo(s);
     }
   }
   

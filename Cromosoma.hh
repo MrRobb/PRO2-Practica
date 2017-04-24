@@ -55,6 +55,12 @@ public:
    POST: Se almacenan los datos leidos en el cromosoma.
    */
   
+  void escribir() const;
+  /*
+   PRE: cierto.
+   POST: Se escribe el contenido del cromosoma.
+   */
+  
 };
 
 #endif /* Cromosoma_hh */

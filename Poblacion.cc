@@ -12,13 +12,12 @@ Poblacion::Poblacion(){
 
 Poblacion::~Poblacion(){}
 
-void Poblacion::anadir_individuo(const Individuo &ind, bool &b){
+void Poblacion::anadir_individuo(const Individuo &ind){
   map<string,Individuo>::iterator i = pob.find(ind.consultar_nombre());
   if (i == pob.end()) {
-    b = false;
     pob[ind.consultar_nombre()] = ind;
   } else {
-    b = true;
+    cout << "  error" << endl;
   }
 }
 
@@ -35,4 +34,11 @@ void Poblacion::escribir() const {
   for(std::map<string, Individuo>::const_iterator it = pob.begin(); it != pob.end(); ++it){
     (*it).second.escribir();
   }
+}
+
+void Poblacion::escribir_genotipo(string nombre) const {
+  map<string, Individuo>::const_iterator it = pob.find(nombre);
+  if(it != pob.end()) (*it).second.escribir_genotipo();
+  else cout << "  error" << endl;
+  
 }
