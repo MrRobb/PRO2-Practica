@@ -38,7 +38,7 @@ int main() {
       // COMPLETAR ARBOL
     }
     else if (s == "escribir_poblacion"){
-      // ESCRIBIR POBLACION
+      pob.escribir();
     }
     else if (s == "escribir_genotipo"){
       // ESCRIBIR GENOTIPO

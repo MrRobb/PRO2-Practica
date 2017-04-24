@@ -70,6 +70,12 @@ public:
    POST: Se almacena la informacion en el individuo de la especie esp.
    */
   
+  void escribir() const;
+  /*
+   PRE: cierto.
+   POST: Se escribe el nombre del individuo, el sexo, y los padres (si no tiene son $).
+   */
+  
 };
 
 #endif /* Individuo_hh */

@@ -69,7 +69,11 @@ public:
    POST: Se añaden los individuos de la especie esp a la poblacion.
    */
   
-  void escribir();
+  void escribir() const;
+  /*
+   PRE: cierto.
+   POST: Se escriben todos los individuos de la poblacion.
+   */
   
   void escribir_arbol(string ind);
   

@@ -42,3 +42,20 @@ void Individuo::leer(const Especie &esp){
     adn[i].second.leer(li);
   }
 }
+
+void Individuo::escribir() const {
+  // Nombre
+  cout << nombre << ' ';
+  
+  // Sexo
+  if(es_masculino) cout << "XY ";
+  else cout << "XX ";
+  
+  // Padres
+  if(padre == "" and madre == ""){
+    cout << "($,$)" << endl;
+  }
+  else {
+    cout << "(" << padre << "," << madre << ")" << endl;
+  }
+}
