@@ -40,6 +40,10 @@ public:
   // Constructora
   
   Especie();
+  /*
+   PRE: cierto.
+   POST: Se crea una especie donde N, lx, ly y v_li.size() == 0.
+   */
   
   // Destructora
   
@@ -49,25 +53,25 @@ public:
   
   // Consultores
   
-  int pares_cromosomas() const;
+  int consultar_pares_cromosomas() const;
   /*
    PRE: cierto.
    POST: Se devuelve el numero de pares de cromosomas.
    */
   
-  int longitud_cromosoma_normal(int i) const;
+  int consultar_longitud_cromosoma_normal(int i) const;
   /*
    PRE: 0 <= i <= N
    POST: Se devuelve la longitud de un cromosoma normal o la parte común de los cromosomas sexuales (si i representa el par sexual).
    */
   
-  int longitud_cromosoma_x() const;
+  int consultar_longitud_cromosoma_x() const;
   /*
    PRE: cierto.
    POST: Se devuelve la longitud del cromosoma x.
    */
   
-  int longitud_cromosoma_y() const;
+  int consultar_longitud_cromosoma_y() const;
   /*
    PRE: cierto.
    POST: Se devuelve la longitud del cromosoma y.

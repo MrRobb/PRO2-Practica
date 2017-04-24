@@ -16,12 +16,17 @@ int main() {
   esp.leer();
   
   Poblacion(pob);
-  pob.leer();
+  pob.leer(esp);
   
   string s;
   while (cin >> s and s != "acabar") {
+    bool b;
     if (s == "anadir_individuo") {
-      // AÑADIR INDIVIDUO
+      Individuo(ind);
+      ind.leer(esp);
+      pob.anadir_individuo(ind, b);
+      if(b) cout << "error" << endl;
+      else  cout << "added" << endl;
     }
     else if (s == "reproduccion_sexual"){
       // REPRODUCIR

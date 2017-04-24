@@ -32,6 +32,10 @@ public:
   // Constructores
   
   Poblacion();
+  /*
+   PRE: cierto.
+   POST: Se crea una poblacion de 0 individuos.
+   */
   
   // Destructora
   
@@ -39,7 +43,12 @@ public:
   
   // Modificadores
   
-  void anadir_individuo(const Individuo &ind);
+  void anadir_individuo(const Individuo &ind, bool &b);
+  /*
+   PRE: ind es un individuo valido. b es un booleano de control.
+   
+   POST: si se ha añadido correctamente el individuo b == false y si no se ha añadido b == true.
+   */
   
   // Consultores
   
@@ -49,13 +58,15 @@ public:
   
   // Lectura y escritura
   
-  void leer();
+  void leer(const Especie &esp);
   /*
    PRE: Se leen los datos en el siguiente orden:
    1. un entero positivo M >= 1 individuos sin ascendientes.
    2. Se leen M individuos segun su especificacion.
    
-   POST: Se añaden los individuos a la poblacion.
+   esp es la especie de los individuos de la poblacion.
+   
+   POST: Se añaden los individuos de la especie esp a la poblacion.
    */
   
   void escribir();
