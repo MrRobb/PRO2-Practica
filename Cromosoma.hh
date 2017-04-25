@@ -40,11 +40,29 @@ public:
    POST: El resultado es un cromosoma sin informacion.
    */
   
+  Cromosoma(int li);
+  /*
+   PRE: cierto.
+   POST: El resultado es un cromosoma sin informacion de tamaño li.
+   */
+  
   // Destructora
   
   ~Cromosoma();
   
   // Modificadora
+  
+  Cromosoma cruzamiento_sexuales (const Cromosoma &secundario, int k, int li) const;
+  /*
+   PRE: El cromosoma secundario es un cromosoma valido, 0 <= k <= li y li es la longitud de la parte comun entre cromosomas.
+   POST: Se devuelve un cromosoma que corresponde de 0 a k al parametro implicito, de k+1 a li corresponde al cromosoma secundario y de li hasta el tamaño del cromosoma implicito correspondera al parametro implicito.
+   */
+  
+  Cromosoma cruzamiento_normales (const Cromosoma &secundario, int k) const;
+  /*
+   PRE: El cromosoma secundario es un cromosoma valido y 0 <= k <= li
+   POST: Se devuelve un cromosoma que corresponde de 0 a k al parametro implicito y de k+1 a li corresponde al cromosoma secundario.
+   */
   
   // Lectura y escritura
   

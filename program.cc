@@ -6,6 +6,7 @@
 //
 
 #include <iostream>
+#include <queue>
 #include "Cromosoma.hh"
 #include "Individuo.hh"
 #include "Poblacion.hh"
@@ -27,13 +28,23 @@ int main() {
       pob.anadir_individuo(ind);
     }
     else if (s == "reproduccion_sexual"){
-      // REPRODUCIR
+      string madre, padre, hijo;
+      cin >> madre >> padre >> hijo;
+      cout << "reproduccion_sexual " << madre << ' ' << padre << ' ' << hijo << endl;
+      pob.reproducir(madre, padre, hijo, esp);
     }
     else if (s == "escribir_arbol_genealogico"){
-      // ESCRIBIR ARBOL
+      string ind; cin >> ind;
+      cout << "escribir_arbol_genealogico " << ind << endl;
+      pob.escribir_arbol(ind);
     }
     else if (s == "completar_arbol_genealogico"){
-      // COMPLETAR ARBOL
+      queue<string> q;
+      string ind;
+      while(cin >> ind) q.push(ind);
+      
+      cout << "completar_arbol_genealogico " << q.front() << endl;
+      pob.completar_arbol_genealogico(q);
     }
     else if (s == "escribir_poblacion"){
       cout << "escribir_poblacion" << endl;

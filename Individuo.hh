@@ -25,7 +25,7 @@ class Individuo {
 private:
   string nombre, padre, madre;
   bool es_masculino;
-  vector< pair< Cromosoma, Cromosoma > > adn;
+  vector< vector<Cromosoma> > adn;
   
   /*
    
@@ -41,6 +41,16 @@ public:
   
   Individuo();
   
+  Individuo(string nombre, const Individuo &madre, const Individuo &padre, const Especie &esp);
+  /*
+   PRE: El padre es un individuo valido. La madre es un individuo valido. Se leen los valores que determinan la reproduccion, en el siguiente orden:
+   1. Cual de los pares de la madre forma el ovulo ('0' --> primero , '1' --> segundo)
+   2. Cual de los pares de la madre forma el espermatozoide ('0' --> primero , '1' --> segundo)
+   3. Un conjunto de N+1 enteros entre 0 y li que indican el punto de corte de cada par de cromosomas (N y li dependen de la especie).
+   
+   POST: Se crea un individuo hijo de padre y hijo de madre a partir los genotipos de los padres, segun los datos de entrada.
+   */
+  
   // Destructora
   
   ~Individuo();
@@ -49,10 +59,34 @@ public:
   
   // Consultoras
   
+  bool tiene_ascendientes() const;
+  /*
+   PRE: cierto.
+   POST: Devuelve true si tiene padre o madre y false si no.
+   */
+  
+  bool consultar_es_masculino() const;
+  /*
+   PRE: cierto.
+   POST: Devuelve true si es masculino y false si es femenino.
+   */
+  
   string consultar_nombre() const;
   /*
    PRE: cierto.
    POST: Devuelve el nombre del individuo.
+   */
+  
+  string consultar_madre() const;
+  /*
+   PRE: cierto.
+   POST: Devuelve el nombre de la madre del individuo.
+   */
+  
+  string consultar_padre() const;
+  /*
+   PRE: cierto.
+   POST: Devuelve el nombre del padre del individuo.
    */
   
   // Leer y escribir
