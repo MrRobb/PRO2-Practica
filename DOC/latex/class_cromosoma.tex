@@ -1,0 +1,141 @@
+\hypertarget{class_cromosoma}{}\section{Referencia de la Clase Cromosoma}
+\label{class_cromosoma}\index{Cromosoma@{Cromosoma}}
+
+
+Contiene la informacion genetica de un cromosoma.  
+
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cromosoma_a8367f3dd60c6af083aed533c69f17b29}{Cromosoma} ()
+\begin{DoxyCompactList}\small\item\em Constructora por defecto. \end{DoxyCompactList}\item 
+\hyperlink{class_cromosoma_a846b63ce7e4c4db0060336afd62a4d20}{Cromosoma} (int li)
+\begin{DoxyCompactList}\small\item\em Crea un cromosoma de un tamaño especifico. \end{DoxyCompactList}\item 
+\hyperlink{class_cromosoma}{Cromosoma} \hyperlink{class_cromosoma_a009c3b88b85d471334ba297593f6f907}{cruzamiento\+\_\+sexuales} (const \hyperlink{class_cromosoma}{Cromosoma} \&secundario, int k, int li) const
+\begin{DoxyCompactList}\small\item\em Cruza los cromosomas sexuales y devuelve el derivado. \end{DoxyCompactList}\item 
+\hyperlink{class_cromosoma}{Cromosoma} \hyperlink{class_cromosoma_a1ef5ef2cfc36fe9d414d3f5be0f6a2af}{cruzamiento\+\_\+normales} (const \hyperlink{class_cromosoma}{Cromosoma} \&secundario, int k) const
+\begin{DoxyCompactList}\small\item\em Cruza los cromosomas normales y devuelve el derivado. \end{DoxyCompactList}\item 
+void \hyperlink{class_cromosoma_abf3ef15e3f9af661572a768029e9c959}{leer} (int li)
+\begin{DoxyCompactList}\small\item\em Lee un cromosoma. \end{DoxyCompactList}\item 
+void \hyperlink{class_cromosoma_abc5487f92ef3cb6f982ddcfc63d77b47}{escribir} () const
+\begin{DoxyCompactList}\small\item\em Escribe un cromosoma. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Contiene la informacion genetica de un cromosoma. 
+
+Contiene un vector con información genética del cromosoma. 
+
+Definición en la línea 21 del archivo Cromosoma.\+hh.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_cromosoma_a8367f3dd60c6af083aed533c69f17b29}\label{class_cromosoma_a8367f3dd60c6af083aed533c69f17b29}} 
+\index{Cromosoma@{Cromosoma}!Cromosoma@{Cromosoma}}
+\index{Cromosoma@{Cromosoma}!Cromosoma@{Cromosoma}}
+\subsubsection{\texorpdfstring{Cromosoma()}{Cromosoma()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Cromosoma\+::\+Cromosoma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructora por defecto. 
+
+\begin{DoxyPrecond}{Precondición}
+cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es un cromosoma sin informacion. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_cromosoma_a846b63ce7e4c4db0060336afd62a4d20}\label{class_cromosoma_a846b63ce7e4c4db0060336afd62a4d20}} 
+\index{Cromosoma@{Cromosoma}!Cromosoma@{Cromosoma}}
+\index{Cromosoma@{Cromosoma}!Cromosoma@{Cromosoma}}
+\subsubsection{\texorpdfstring{Cromosoma()}{Cromosoma()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Cromosoma\+::\+Cromosoma (\begin{DoxyParamCaption}\item[{int}]{li }\end{DoxyParamCaption})}
+
+
+
+Crea un cromosoma de un tamaño especifico. 
+
+\begin{DoxyPrecond}{Precondición}
+cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es un cromosoma sin informacion de tamaño li. 
+\end{DoxyPostcond}
+
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_cromosoma_a009c3b88b85d471334ba297593f6f907}\label{class_cromosoma_a009c3b88b85d471334ba297593f6f907}} 
+\index{Cromosoma@{Cromosoma}!cruzamiento\+\_\+sexuales@{cruzamiento\+\_\+sexuales}}
+\index{cruzamiento\+\_\+sexuales@{cruzamiento\+\_\+sexuales}!Cromosoma@{Cromosoma}}
+\subsubsection{\texorpdfstring{cruzamiento\+\_\+sexuales()}{cruzamiento\_sexuales()}}
+{\footnotesize\ttfamily \hyperlink{class_cromosoma}{Cromosoma} Cromosoma\+::cruzamiento\+\_\+sexuales (\begin{DoxyParamCaption}\item[{const \hyperlink{class_cromosoma}{Cromosoma} \&}]{secundario,  }\item[{int}]{k,  }\item[{int}]{li }\end{DoxyParamCaption}) const}
+
+
+
+Cruza los cromosomas sexuales y devuelve el derivado. 
+
+\begin{DoxyPrecond}{Precondición}
+El cromosoma secundario es un cromosoma valido, 0 $<$= k $<$= li y li es la longitud de la parte comun entre cromosomas. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se devuelve un cromosoma que corresponde de 0 a k al parametro implicito, de k+1 a li corresponde al cromosoma secundario y de li hasta el tamaño del cromosoma implicito correspondera al parametro implicito. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_cromosoma_a1ef5ef2cfc36fe9d414d3f5be0f6a2af}\label{class_cromosoma_a1ef5ef2cfc36fe9d414d3f5be0f6a2af}} 
+\index{Cromosoma@{Cromosoma}!cruzamiento\+\_\+normales@{cruzamiento\+\_\+normales}}
+\index{cruzamiento\+\_\+normales@{cruzamiento\+\_\+normales}!Cromosoma@{Cromosoma}}
+\subsubsection{\texorpdfstring{cruzamiento\+\_\+normales()}{cruzamiento\_normales()}}
+{\footnotesize\ttfamily \hyperlink{class_cromosoma}{Cromosoma} Cromosoma\+::cruzamiento\+\_\+normales (\begin{DoxyParamCaption}\item[{const \hyperlink{class_cromosoma}{Cromosoma} \&}]{secundario,  }\item[{int}]{k }\end{DoxyParamCaption}) const}
+
+
+
+Cruza los cromosomas normales y devuelve el derivado. 
+
+\begin{DoxyPrecond}{Precondición}
+El cromosoma secundario es un cromosoma valido y 0 $<$= k $<$= li 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se devuelve un cromosoma que corresponde de 0 a k al parametro implicito y de k+1 a li corresponde al cromosoma secundario. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_cromosoma_abf3ef15e3f9af661572a768029e9c959}\label{class_cromosoma_abf3ef15e3f9af661572a768029e9c959}} 
+\index{Cromosoma@{Cromosoma}!leer@{leer}}
+\index{leer@{leer}!Cromosoma@{Cromosoma}}
+\subsubsection{\texorpdfstring{leer()}{leer()}}
+{\footnotesize\ttfamily void Cromosoma\+::leer (\begin{DoxyParamCaption}\item[{int}]{li }\end{DoxyParamCaption})}
+
+
+
+Lee un cromosoma. 
+
+\begin{DoxyPrecond}{Precondición}
+La informacion del cromosoma se lee en el siguiente orden\+:
+\begin{DoxyEnumerate}
+\item Se leen un total de li (li $>$= 1) enteros positivos. 
+\end{DoxyEnumerate}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se almacenan los datos leidos en el cromosoma. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_cromosoma_abc5487f92ef3cb6f982ddcfc63d77b47}\label{class_cromosoma_abc5487f92ef3cb6f982ddcfc63d77b47}} 
+\index{Cromosoma@{Cromosoma}!escribir@{escribir}}
+\index{escribir@{escribir}!Cromosoma@{Cromosoma}}
+\subsubsection{\texorpdfstring{escribir()}{escribir()}}
+{\footnotesize\ttfamily void Cromosoma\+::escribir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Escribe un cromosoma. 
+
+\begin{DoxyPrecond}{Precondición}
+cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se escribe el contenido del cromosoma. 
+\end{DoxyPostcond}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_cromosoma_8hh}{Cromosoma.\+hh}\end{DoxyCompactItemize}

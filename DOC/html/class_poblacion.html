@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Práctica de PRO2. Experimentos genético de laboratorio.: Referencia de la Clase Poblacion</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Práctica de PRO2. Experimentos genético de laboratorio.
+   &#160;<span id="projectnumber">version 1 07-abril-2017</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.14 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="class_poblacion-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase Poblacion</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Representa un poblacion de individuos de una misma especie.  
+ <a href="class_poblacion.html#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:ad3909b6ea27344b861b7cd548cb2b65e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_poblacion.html#ad3909b6ea27344b861b7cd548cb2b65e">Poblacion</a> ()</td></tr>
+<tr class="memdesc:ad3909b6ea27344b861b7cd548cb2b65e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creadora por defecto.  <a href="#ad3909b6ea27344b861b7cd548cb2b65e">Más...</a><br /></td></tr>
+<tr class="separator:ad3909b6ea27344b861b7cd548cb2b65e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4622ccceef105548460351376791f8f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_poblacion.html#a4622ccceef105548460351376791f8f6">anadir_individuo</a> (const <a class="el" href="class_individuo.html">Individuo</a> &amp;ind)</td></tr>
+<tr class="memdesc:a4622ccceef105548460351376791f8f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Añade un individuo sin ascendentes a la población.  <a href="#a4622ccceef105548460351376791f8f6">Más...</a><br /></td></tr>
+<tr class="separator:a4622ccceef105548460351376791f8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83e45d5057cb4496647d0aed76071876"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_poblacion.html#a83e45d5057cb4496647d0aed76071876">reproducir</a> (string madre, string padre, string hijo, vector&lt; vector&lt; int &gt; &gt; &amp;matriz_rep, const <a class="el" href="class_especie.html">Especie</a> &amp;esp)</td></tr>
+<tr class="memdesc:a83e45d5057cb4496647d0aed76071876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reproduce dos individuos y añade el hijo a la población.  <a href="#a83e45d5057cb4496647d0aed76071876">Más...</a><br /></td></tr>
+<tr class="separator:a83e45d5057cb4496647d0aed76071876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dd7bd82d100852ad3767d5830fe932a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_poblacion.html#a2dd7bd82d100852ad3767d5830fe932a">completar_arbol_genealogico</a> (queue&lt; string &gt; elem_arb_incom)</td></tr>
+<tr class="memdesc:a2dd7bd82d100852ad3767d5830fe932a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Completa un arbol genealogico.  <a href="#a2dd7bd82d100852ad3767d5830fe932a">Más...</a><br /></td></tr>
+<tr class="separator:a2dd7bd82d100852ad3767d5830fe932a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94a32410a0d2b2066b0d7203efbf673f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_poblacion.html#a94a32410a0d2b2066b0d7203efbf673f">leer</a> (const <a class="el" href="class_especie.html">Especie</a> &amp;esp)</td></tr>
+<tr class="memdesc:a94a32410a0d2b2066b0d7203efbf673f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee una población de una especie.  <a href="#a94a32410a0d2b2066b0d7203efbf673f">Más...</a><br /></td></tr>
+<tr class="separator:a94a32410a0d2b2066b0d7203efbf673f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b14ac61ad3c062ce8d9c30cdee05923"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_poblacion.html#a2b14ac61ad3c062ce8d9c30cdee05923">escribir</a> () const</td></tr>
+<tr class="memdesc:a2b14ac61ad3c062ce8d9c30cdee05923"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escribe una población.  <a href="#a2b14ac61ad3c062ce8d9c30cdee05923">Más...</a><br /></td></tr>
+<tr class="separator:a2b14ac61ad3c062ce8d9c30cdee05923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f86f933c6bf832f8c5b836477f8cbe9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_poblacion.html#a1f86f933c6bf832f8c5b836477f8cbe9">escribir_genotipo</a> (string nombre) const</td></tr>
+<tr class="memdesc:a1f86f933c6bf832f8c5b836477f8cbe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escribe un genotipo de un individuo.  <a href="#a1f86f933c6bf832f8c5b836477f8cbe9">Más...</a><br /></td></tr>
+<tr class="separator:a1f86f933c6bf832f8c5b836477f8cbe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44518707081153d520d7781ea7691b19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_poblacion.html#a44518707081153d520d7781ea7691b19">escribir_arbol</a> (string ind)</td></tr>
+<tr class="memdesc:a44518707081153d520d7781ea7691b19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escribe un arbol de un individuo.  <a href="#a44518707081153d520d7781ea7691b19">Más...</a><br /></td></tr>
+<tr class="separator:a44518707081153d520d7781ea7691b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Representa un poblacion de individuos de una misma especie. </p>
+<p>Si está leída, contiene un registro formado por los individuos de la poblacion, ordenado por nombre, sinó está leída, contiene una población vacía, es decir, sin individuos.</p>
+<p>Todas las operaciones son de <b>coste constante</b>. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_poblacion_8hh_source.html#l00026">26</a> del archivo <a class="el" href="_poblacion_8hh_source.html">Poblacion.hh</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a id="ad3909b6ea27344b861b7cd548cb2b65e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3909b6ea27344b861b7cd548cb2b65e">&#9670;&nbsp;</a></span>Poblacion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Poblacion::Poblacion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creadora por defecto. </p>
+<p>Se ejecuta automáticamente al declarar una población. </p><dl class="section pre"><dt>Precondición</dt><dd>cierto. </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Se crea una poblacion de 0 individuos. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a id="a4622ccceef105548460351376791f8f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4622ccceef105548460351376791f8f6">&#9670;&nbsp;</a></span>anadir_individuo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Poblacion::anadir_individuo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_individuo.html">Individuo</a> &amp;&#160;</td>
+          <td class="paramname"><em>ind</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Añade un individuo sin ascendentes a la población. </p>
+<dl class="section pre"><dt>Precondición</dt><dd>ind es un individuo valido. </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Si no se ha añadido correctamente saldra un mensaje de error. </dd></dl>
+
+</div>
+</div>
+<a id="a83e45d5057cb4496647d0aed76071876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83e45d5057cb4496647d0aed76071876">&#9670;&nbsp;</a></span>reproducir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Poblacion::reproducir </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>madre</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>padre</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>hijo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; vector&lt; int &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>matriz_rep</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_especie.html">Especie</a> &amp;&#160;</td>
+          <td class="paramname"><em>esp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reproduce dos individuos y añade el hijo a la población. </p>
+<dl class="section pre"><dt>Precondición</dt><dd>El string madre, padre, son los nombres de los dos progenitores existentes en la poblacion a partir de los cuales se creara el individuo con nombre hijo, que antes no existia en la poblacion. Los padres deben ser de la especie esp y el hijo lo sera una vez creado.</dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Si alguno de los dos primeros nombres no esta entre los individuos del sistema (no existe) o el tercero si esta (ya existe) se escribira el mensaje error. Si los dos primeros individuos no pueden reproducirse se escribira el mensaje no es posible reproduccion. Para poder reproducirse el primer indi- viduo ha de tener cromosomas sexuales XX, el segundo cromosomas sexuales XY , no ser hermanos ni por parte de padre ni de madre, y no ser ninguno de los dos antecesor del otro. La operacion de reproduccion sexual producira un nuevo individuo cuyo nombre sera el tercero leido. El genotipo del descendiente se calculara a partir de los genotipos de sus padres indicando que cromosomas de cada par (el primero o el segundo) forman el ovulo y el espermatozoide y cuales son los puntos de corte para cada par de cromosomas del descendiente. El sistema registrara la relacion de parentesco entre los padres y el nuevo individuo. </dd></dl>
+
+</div>
+</div>
+<a id="a2dd7bd82d100852ad3767d5830fe932a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dd7bd82d100852ad3767d5830fe932a">&#9670;&nbsp;</a></span>completar_arbol_genealogico()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Poblacion::completar_arbol_genealogico </td>
+          <td>(</td>
+          <td class="paramtype">queue&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>elem_arb_incom</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Completa un arbol genealogico. </p>
+<dl class="section pre"><dt>Precondición</dt><dd>elem_arb_incom es una cola de elementos que representan el arbol parcial de una poblacion, si el arbol no es parcial se escribira un error: 'no es arbol parcial'. </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Se escribe el arbol completado con aquellos individuos de la poblacion que faltaban. </dd></dl>
+
+</div>
+</div>
+<a id="a94a32410a0d2b2066b0d7203efbf673f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94a32410a0d2b2066b0d7203efbf673f">&#9670;&nbsp;</a></span>leer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Poblacion::leer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_especie.html">Especie</a> &amp;&#160;</td>
+          <td class="paramname"><em>esp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lee una población de una especie. </p>
+<dl class="section pre"><dt>Precondición</dt><dd>Se leen los datos en el siguiente orden:<ol type="1">
+<li>un entero positivo M &gt;= 1 individuos sin ascendientes.</li>
+<li>Se leen M individuos segun su especificacion.</li>
+</ol>
+</dd></dl>
+<p>esp es la especie de los individuos de la poblacion.</p>
+<dl class="section post"><dt>Postcondición</dt><dd>Se añaden los individuos de la especie esp a la poblacion. </dd></dl>
+
+</div>
+</div>
+<a id="a2b14ac61ad3c062ce8d9c30cdee05923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b14ac61ad3c062ce8d9c30cdee05923">&#9670;&nbsp;</a></span>escribir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Poblacion::escribir </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Escribe una población. </p>
+<dl class="section pre"><dt>Precondición</dt><dd>cierto. </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Se escriben todos los individuos de la poblacion. </dd></dl>
+
+</div>
+</div>
+<a id="a1f86f933c6bf832f8c5b836477f8cbe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f86f933c6bf832f8c5b836477f8cbe9">&#9670;&nbsp;</a></span>escribir_genotipo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Poblacion::escribir_genotipo </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>nombre</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Escribe un genotipo de un individuo. </p>
+<dl class="section pre"><dt>Precondición</dt><dd>nombre es el nombre del individuo a escribir.</dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Se busca al individuo, y si existe se escribe su genotipo. </dd></dl>
+
+</div>
+</div>
+<a id="a44518707081153d520d7781ea7691b19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44518707081153d520d7781ea7691b19">&#9670;&nbsp;</a></span>escribir_arbol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Poblacion::escribir_arbol </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>ind</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Escribe un arbol de un individuo. </p>
+<dl class="section pre"><dt>Precondición</dt><dd>el string ind debe ser un individuo de la poblacion, en caso contrario dara error. </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>Escribe el arbol del individuo por niveles. Dentro del mismo nivel, el padre y la madre asociados (es decir, que hayan formado pareja reproductora) apareceran consecutivos, primero el padre y despues la madre. </dd></dl>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li><a class="el" href="_poblacion_8hh_source.html">Poblacion.hh</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

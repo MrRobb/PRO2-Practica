@@ -1,0 +1,182 @@
+\hypertarget{class_poblacion}{}\section{Referencia de la Clase Poblacion}
+\label{class_poblacion}\index{Poblacion@{Poblacion}}
+
+
+Representa un poblacion de individuos de una misma especie.  
+
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_poblacion_ad3909b6ea27344b861b7cd548cb2b65e}{Poblacion} ()
+\begin{DoxyCompactList}\small\item\em Creadora por defecto. \end{DoxyCompactList}\item 
+void \hyperlink{class_poblacion_a4622ccceef105548460351376791f8f6}{anadir\+\_\+individuo} (const \hyperlink{class_individuo}{Individuo} \&ind)
+\begin{DoxyCompactList}\small\item\em Añade un individuo sin ascendentes a la población. \end{DoxyCompactList}\item 
+void \hyperlink{class_poblacion_a83e45d5057cb4496647d0aed76071876}{reproducir} (string madre, string padre, string hijo, vector$<$ vector$<$ int $>$ $>$ \&matriz\+\_\+rep, const \hyperlink{class_especie}{Especie} \&esp)
+\begin{DoxyCompactList}\small\item\em Reproduce dos individuos y añade el hijo a la población. \end{DoxyCompactList}\item 
+void \hyperlink{class_poblacion_a2dd7bd82d100852ad3767d5830fe932a}{completar\+\_\+arbol\+\_\+genealogico} (queue$<$ string $>$ elem\+\_\+arb\+\_\+incom)
+\begin{DoxyCompactList}\small\item\em Completa un arbol genealogico. \end{DoxyCompactList}\item 
+void \hyperlink{class_poblacion_a94a32410a0d2b2066b0d7203efbf673f}{leer} (const \hyperlink{class_especie}{Especie} \&esp)
+\begin{DoxyCompactList}\small\item\em Lee una población de una especie. \end{DoxyCompactList}\item 
+void \hyperlink{class_poblacion_a2b14ac61ad3c062ce8d9c30cdee05923}{escribir} () const
+\begin{DoxyCompactList}\small\item\em Escribe una población. \end{DoxyCompactList}\item 
+void \hyperlink{class_poblacion_a1f86f933c6bf832f8c5b836477f8cbe9}{escribir\+\_\+genotipo} (string nombre) const
+\begin{DoxyCompactList}\small\item\em Escribe un genotipo de un individuo. \end{DoxyCompactList}\item 
+void \hyperlink{class_poblacion_a44518707081153d520d7781ea7691b19}{escribir\+\_\+arbol} (string ind)
+\begin{DoxyCompactList}\small\item\em Escribe un arbol de un individuo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Representa un poblacion de individuos de una misma especie. 
+
+Si está leída, contiene un registro formado por los individuos de la poblacion, ordenado por nombre, sinó está leída, contiene una población vacía, es decir, sin individuos.
+
+Todas las operaciones son de {\bfseries coste constante}. 
+
+Definición en la línea 26 del archivo Poblacion.\+hh.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_poblacion_ad3909b6ea27344b861b7cd548cb2b65e}\label{class_poblacion_ad3909b6ea27344b861b7cd548cb2b65e}} 
+\index{Poblacion@{Poblacion}!Poblacion@{Poblacion}}
+\index{Poblacion@{Poblacion}!Poblacion@{Poblacion}}
+\subsubsection{\texorpdfstring{Poblacion()}{Poblacion()}}
+{\footnotesize\ttfamily Poblacion\+::\+Poblacion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creadora por defecto. 
+
+Se ejecuta automáticamente al declarar una población. \begin{DoxyPrecond}{Precondición}
+cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se crea una poblacion de 0 individuos. 
+\end{DoxyPostcond}
+
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_poblacion_a4622ccceef105548460351376791f8f6}\label{class_poblacion_a4622ccceef105548460351376791f8f6}} 
+\index{Poblacion@{Poblacion}!anadir\+\_\+individuo@{anadir\+\_\+individuo}}
+\index{anadir\+\_\+individuo@{anadir\+\_\+individuo}!Poblacion@{Poblacion}}
+\subsubsection{\texorpdfstring{anadir\+\_\+individuo()}{anadir\_individuo()}}
+{\footnotesize\ttfamily void Poblacion\+::anadir\+\_\+individuo (\begin{DoxyParamCaption}\item[{const \hyperlink{class_individuo}{Individuo} \&}]{ind }\end{DoxyParamCaption})}
+
+
+
+Añade un individuo sin ascendentes a la población. 
+
+\begin{DoxyPrecond}{Precondición}
+ind es un individuo valido. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si no se ha añadido correctamente saldra un mensaje de error. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_poblacion_a83e45d5057cb4496647d0aed76071876}\label{class_poblacion_a83e45d5057cb4496647d0aed76071876}} 
+\index{Poblacion@{Poblacion}!reproducir@{reproducir}}
+\index{reproducir@{reproducir}!Poblacion@{Poblacion}}
+\subsubsection{\texorpdfstring{reproducir()}{reproducir()}}
+{\footnotesize\ttfamily void Poblacion\+::reproducir (\begin{DoxyParamCaption}\item[{string}]{madre,  }\item[{string}]{padre,  }\item[{string}]{hijo,  }\item[{vector$<$ vector$<$ int $>$ $>$ \&}]{matriz\+\_\+rep,  }\item[{const \hyperlink{class_especie}{Especie} \&}]{esp }\end{DoxyParamCaption})}
+
+
+
+Reproduce dos individuos y añade el hijo a la población. 
+
+\begin{DoxyPrecond}{Precondición}
+El string madre, padre, son los nombres de los dos progenitores existentes en la poblacion a partir de los cuales se creara el individuo con nombre hijo, que antes no existia en la poblacion. Los padres deben ser de la especie esp y el hijo lo sera una vez creado.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si alguno de los dos primeros nombres no esta entre los individuos del sistema (no existe) o el tercero si esta (ya existe) se escribira el mensaje error. Si los dos primeros individuos no pueden reproducirse se escribira el mensaje no es posible reproduccion. Para poder reproducirse el primer indi-\/ viduo ha de tener cromosomas sexuales XX, el segundo cromosomas sexuales XY , no ser hermanos ni por parte de padre ni de madre, y no ser ninguno de los dos antecesor del otro. La operacion de reproduccion sexual producira un nuevo individuo cuyo nombre sera el tercero leido. El genotipo del descendiente se calculara a partir de los genotipos de sus padres indicando que cromosomas de cada par (el primero o el segundo) forman el ovulo y el espermatozoide y cuales son los puntos de corte para cada par de cromosomas del descendiente. El sistema registrara la relacion de parentesco entre los padres y el nuevo individuo. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_poblacion_a2dd7bd82d100852ad3767d5830fe932a}\label{class_poblacion_a2dd7bd82d100852ad3767d5830fe932a}} 
+\index{Poblacion@{Poblacion}!completar\+\_\+arbol\+\_\+genealogico@{completar\+\_\+arbol\+\_\+genealogico}}
+\index{completar\+\_\+arbol\+\_\+genealogico@{completar\+\_\+arbol\+\_\+genealogico}!Poblacion@{Poblacion}}
+\subsubsection{\texorpdfstring{completar\+\_\+arbol\+\_\+genealogico()}{completar\_arbol\_genealogico()}}
+{\footnotesize\ttfamily void Poblacion\+::completar\+\_\+arbol\+\_\+genealogico (\begin{DoxyParamCaption}\item[{queue$<$ string $>$}]{elem\+\_\+arb\+\_\+incom }\end{DoxyParamCaption})}
+
+
+
+Completa un arbol genealogico. 
+
+\begin{DoxyPrecond}{Precondición}
+elem\+\_\+arb\+\_\+incom es una cola de elementos que representan el arbol parcial de una poblacion, si el arbol no es parcial se escribira un error\+: \textquotesingle{}no es arbol parcial\textquotesingle{}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se escribe el arbol completado con aquellos individuos de la poblacion que faltaban. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_poblacion_a94a32410a0d2b2066b0d7203efbf673f}\label{class_poblacion_a94a32410a0d2b2066b0d7203efbf673f}} 
+\index{Poblacion@{Poblacion}!leer@{leer}}
+\index{leer@{leer}!Poblacion@{Poblacion}}
+\subsubsection{\texorpdfstring{leer()}{leer()}}
+{\footnotesize\ttfamily void Poblacion\+::leer (\begin{DoxyParamCaption}\item[{const \hyperlink{class_especie}{Especie} \&}]{esp }\end{DoxyParamCaption})}
+
+
+
+Lee una población de una especie. 
+
+\begin{DoxyPrecond}{Precondición}
+Se leen los datos en el siguiente orden\+:
+\begin{DoxyEnumerate}
+\item un entero positivo M $>$= 1 individuos sin ascendientes.
+\item Se leen M individuos segun su especificacion.
+\end{DoxyEnumerate}
+\end{DoxyPrecond}
+esp es la especie de los individuos de la poblacion.
+
+\begin{DoxyPostcond}{Postcondición}
+Se añaden los individuos de la especie esp a la poblacion. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_poblacion_a2b14ac61ad3c062ce8d9c30cdee05923}\label{class_poblacion_a2b14ac61ad3c062ce8d9c30cdee05923}} 
+\index{Poblacion@{Poblacion}!escribir@{escribir}}
+\index{escribir@{escribir}!Poblacion@{Poblacion}}
+\subsubsection{\texorpdfstring{escribir()}{escribir()}}
+{\footnotesize\ttfamily void Poblacion\+::escribir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Escribe una población. 
+
+\begin{DoxyPrecond}{Precondición}
+cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se escriben todos los individuos de la poblacion. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_poblacion_a1f86f933c6bf832f8c5b836477f8cbe9}\label{class_poblacion_a1f86f933c6bf832f8c5b836477f8cbe9}} 
+\index{Poblacion@{Poblacion}!escribir\+\_\+genotipo@{escribir\+\_\+genotipo}}
+\index{escribir\+\_\+genotipo@{escribir\+\_\+genotipo}!Poblacion@{Poblacion}}
+\subsubsection{\texorpdfstring{escribir\+\_\+genotipo()}{escribir\_genotipo()}}
+{\footnotesize\ttfamily void Poblacion\+::escribir\+\_\+genotipo (\begin{DoxyParamCaption}\item[{string}]{nombre }\end{DoxyParamCaption}) const}
+
+
+
+Escribe un genotipo de un individuo. 
+
+\begin{DoxyPrecond}{Precondición}
+nombre es el nombre del individuo a escribir.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se busca al individuo, y si existe se escribe su genotipo. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_poblacion_a44518707081153d520d7781ea7691b19}\label{class_poblacion_a44518707081153d520d7781ea7691b19}} 
+\index{Poblacion@{Poblacion}!escribir\+\_\+arbol@{escribir\+\_\+arbol}}
+\index{escribir\+\_\+arbol@{escribir\+\_\+arbol}!Poblacion@{Poblacion}}
+\subsubsection{\texorpdfstring{escribir\+\_\+arbol()}{escribir\_arbol()}}
+{\footnotesize\ttfamily void Poblacion\+::escribir\+\_\+arbol (\begin{DoxyParamCaption}\item[{string}]{ind }\end{DoxyParamCaption})}
+
+
+
+Escribe un arbol de un individuo. 
+
+\begin{DoxyPrecond}{Precondición}
+el string ind debe ser un individuo de la poblacion, en caso contrario dara error. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Escribe el arbol del individuo por niveles. Dentro del mismo nivel, el padre y la madre asociados (es decir, que hayan formado pareja reproductora) apareceran consecutivos, primero el padre y despues la madre. 
+\end{DoxyPostcond}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_poblacion_8hh}{Poblacion.\+hh}\end{DoxyCompactItemize}

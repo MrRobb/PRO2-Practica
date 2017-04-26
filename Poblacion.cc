@@ -11,8 +11,6 @@
 Poblacion::Poblacion(){
 }
 
-Poblacion::~Poblacion(){}
-
 bool Poblacion::es_antecesor(string hijo, const string &antecesor){
   
   if(!pob[hijo].tiene_ascendientes()){
@@ -40,7 +38,7 @@ void Poblacion::anadir_individuo(const Individuo &ind){
   }
 }
 
-void Poblacion::reproducir(string madre, string padre, string hijo, const Especie &esp){
+void Poblacion::reproducir(string madre, string padre, string hijo, vector<vector<int> > &matriz_rep, const Especie &esp){
   // Crear iteradores
   map<string, Individuo>::iterator it_madre;
   map<string, Individuo>::iterator it_padre;
@@ -86,6 +84,8 @@ void Poblacion::reproducir(string madre, string padre, string hijo, const Especi
   if(b == 0) cout << "  no es posible reproduccion" << endl;
   else if(b == 1) cout << "  error" << endl;
 }
+
+void Poblacion::completar_arbol_genealogico(queue<string> elem_arb_incom){}
 
 void Poblacion::leer(const Especie &esp){
   int M; cin >> M;

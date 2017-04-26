@@ -34,8 +34,6 @@ Individuo::Individuo(string nombre, const Individuo &madre, const Individuo &pad
   (*this).nombre = nombre;
 }
 
-Individuo::~Individuo(){}
-
 bool Individuo::tiene_ascendientes() const {
   return !(madre == "" or padre == "");
 }

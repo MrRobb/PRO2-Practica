@@ -1,0 +1,19 @@
+\hypertarget{_cromosoma_8hh}{}\section{Referencia del Archivo Cromosoma.\+hh}
+\label{_cromosoma_8hh}\index{Cromosoma.\+hh@{Cromosoma.\+hh}}
+
+
+Especificación de la clase \hyperlink{class_cromosoma}{Cromosoma}.  
+
+
+Dependencia gráfica adjunta para Cromosoma.\+hh\+:
+% FIG 0
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_cromosoma}{Cromosoma}
+\begin{DoxyCompactList}\small\item\em Contiene la informacion genetica de un cromosoma. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Especificación de la clase \hyperlink{class_cromosoma}{Cromosoma}. 
+

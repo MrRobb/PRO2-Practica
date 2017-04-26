@@ -14,8 +14,6 @@ Cromosoma::Cromosoma(int li){
   c = vector<int> (li);
 }
 
-Cromosoma::~Cromosoma(){}
-
 Cromosoma Cromosoma::cruzamiento_sexuales (const Cromosoma &secundario, int k, int li) const{
   int lim = int((*this).c.size());
   Cromosoma cnuevo (lim);

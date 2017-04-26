@@ -1,0 +1,144 @@
+\hypertarget{class_especie}{}\section{Referencia de la Clase Especie}
+\label{class_especie}\index{Especie@{Especie}}
+
+
+Representa una especie.  
+
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_especie_a272c2488719cc9874b2f174906675b3d}{Especie} ()
+\begin{DoxyCompactList}\small\item\em Creadora por defecto. \end{DoxyCompactList}\item 
+int \hyperlink{class_especie_a163bb40ff71d1792c7dddb13e62261ef}{consultar\+\_\+pares\+\_\+cromosomas} () const
+\begin{DoxyCompactList}\small\item\em Consultora del número de pares de cromosomas. \end{DoxyCompactList}\item 
+int \hyperlink{class_especie_a54799405b10e46e0ea5723b72c7aa999}{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+normal} (int i) const
+\begin{DoxyCompactList}\small\item\em Consultora de la longitud de un cromosoma. \end{DoxyCompactList}\item 
+int \hyperlink{class_especie_ab2da80d81baf641f18d7621838039e76}{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+x} () const
+\begin{DoxyCompactList}\small\item\em Consultora de la longitud de x. \end{DoxyCompactList}\item 
+int \hyperlink{class_especie_a410b95f623a7013b96ec20039ca584b3}{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+y} () const
+\begin{DoxyCompactList}\small\item\em Consultora de la longitud de y. \end{DoxyCompactList}\item 
+void \hyperlink{class_especie_a2335c9ddc4757e964d78e6267304cf52}{leer} ()
+\begin{DoxyCompactList}\small\item\em Lectura de la especie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Representa una especie. 
+
+Contiene el número de pares de Cromosomas, el tamaño de cada uno de esos pares y el tamaño del cromosoma X e Y. 
+
+Definición en la línea 21 del archivo Especie.\+hh.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_especie_a272c2488719cc9874b2f174906675b3d}\label{class_especie_a272c2488719cc9874b2f174906675b3d}} 
+\index{Especie@{Especie}!Especie@{Especie}}
+\index{Especie@{Especie}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{Especie()}{Especie()}}
+{\footnotesize\ttfamily Especie\+::\+Especie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creadora por defecto. 
+
+Se ejecuta automáticamente al declarar una especie. \begin{DoxyPrecond}{Precondición}
+cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se crea una especie donde N, lx, ly y v\+\_\+li.\+size() == 0. 
+\end{DoxyPostcond}
+
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_especie_a163bb40ff71d1792c7dddb13e62261ef}\label{class_especie_a163bb40ff71d1792c7dddb13e62261ef}} 
+\index{Especie@{Especie}!consultar\+\_\+pares\+\_\+cromosomas@{consultar\+\_\+pares\+\_\+cromosomas}}
+\index{consultar\+\_\+pares\+\_\+cromosomas@{consultar\+\_\+pares\+\_\+cromosomas}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{consultar\+\_\+pares\+\_\+cromosomas()}{consultar\_pares\_cromosomas()}}
+{\footnotesize\ttfamily int Especie\+::consultar\+\_\+pares\+\_\+cromosomas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultora del número de pares de cromosomas. 
+
+\begin{DoxyPrecond}{Precondición}
+cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se devuelve el numero de pares de cromosomas. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_especie_a54799405b10e46e0ea5723b72c7aa999}\label{class_especie_a54799405b10e46e0ea5723b72c7aa999}} 
+\index{Especie@{Especie}!consultar\+\_\+longitud\+\_\+cromosoma\+\_\+normal@{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+normal}}
+\index{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+normal@{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+normal}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+normal()}{consultar\_longitud\_cromosoma\_normal()}}
+{\footnotesize\ttfamily int Especie\+::consultar\+\_\+longitud\+\_\+cromosoma\+\_\+normal (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Consultora de la longitud de un cromosoma. 
+
+\begin{DoxyPrecond}{Precondición}
+0 $<$= i $<$= N 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se devuelve la longitud de un cromosoma normal o la parte común de los cromosomas sexuales (si i representa el par sexual). 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_especie_ab2da80d81baf641f18d7621838039e76}\label{class_especie_ab2da80d81baf641f18d7621838039e76}} 
+\index{Especie@{Especie}!consultar\+\_\+longitud\+\_\+cromosoma\+\_\+x@{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+x}}
+\index{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+x@{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+x}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+x()}{consultar\_longitud\_cromosoma\_x()}}
+{\footnotesize\ttfamily int Especie\+::consultar\+\_\+longitud\+\_\+cromosoma\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultora de la longitud de x. 
+
+\begin{DoxyPrecond}{Precondición}
+cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se devuelve la longitud del cromosoma x. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_especie_a410b95f623a7013b96ec20039ca584b3}\label{class_especie_a410b95f623a7013b96ec20039ca584b3}} 
+\index{Especie@{Especie}!consultar\+\_\+longitud\+\_\+cromosoma\+\_\+y@{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+y}}
+\index{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+y@{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+y}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{consultar\+\_\+longitud\+\_\+cromosoma\+\_\+y()}{consultar\_longitud\_cromosoma\_y()}}
+{\footnotesize\ttfamily int Especie\+::consultar\+\_\+longitud\+\_\+cromosoma\+\_\+y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultora de la longitud de y. 
+
+\begin{DoxyPrecond}{Precondición}
+cierto. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se devuelve la longitud del cromosoma y. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_especie_a2335c9ddc4757e964d78e6267304cf52}\label{class_especie_a2335c9ddc4757e964d78e6267304cf52}} 
+\index{Especie@{Especie}!leer@{leer}}
+\index{leer@{leer}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{leer()}{leer()}}
+{\footnotesize\ttfamily void Especie\+::leer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lectura de la especie. 
+
+\begin{DoxyPrecond}{Precondición}
+Se leen los datos de la especie en el siguiente orden\+:
+\begin{DoxyEnumerate}
+\item un entero positivo 1 $<$= N que indica los pares de cromosomas normales
+\item un conjunto de N+1 enteros positivos 1 $<$= li (0 $<$= i $<$= N) que indican la longitud del par i o la parte común de los cromosomas sexuales (si i representa el par sexual)
+\item un entero positivo 1 $<$= lx que indica la longitud del cromosoma x
+\item un entero positivo 1 $<$= ly que indica la longitud del cromosoma y
+\end{DoxyEnumerate}
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se asignan esos datos a la especie. 
+\end{DoxyPostcond}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_especie_8hh}{Especie.\+hh}\end{DoxyCompactItemize}
