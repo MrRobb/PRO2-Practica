@@ -29,6 +29,21 @@ bool Poblacion::es_antecesor(string hijo, const string &antecesor){
   }
 }
 
+void Poblacion::i_escribir_padres(queue<string> &q_individuos, string ind){
+  string madre = pob[ind].consultar_madre();
+  string padre = pob[ind].consultar_padre();
+  
+  if(madre == "" and padre == ""){
+    q_individuos.push("$");
+    q_individuos.push("$");
+  } else {
+    q_individuos.push(madre);
+    i_escribir_padres(q_individuos, madre);
+    q_individuos.push(padre);
+    i_escribir_padres(q_individuos, padre);
+  }
+}
+
 void Poblacion::anadir_individuo(string nombre, const Individuo &ind){
   map<string,Individuo>::iterator i = pob.find(nombre);
   if (i == pob.end()) {
@@ -106,10 +121,72 @@ void Poblacion::reproducir(string madre, string padre, string hijo, const Especi
   }
 }
 
-void Poblacion::completar_arbol_genealogico(queue<string> &elem_arb_incom){
-  queue<string> q_individuos;
-  queue<int> q_niveles;
-  arbol_genealogico_en_colas(elem_arb_incom.front(), q_individuos, q_niveles);
+bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
+  string ind = q_entrada.front();
+  map<string,Individuo>::const_iterator it = pob.find(ind);
+  
+  if(it != pob.end()){
+    
+    queue<string> q_individuos;
+    string madre;
+    string padre;
+    
+    q_individuos.push(ind);
+    i_escribir_padres(q_individuos, ind);
+    
+    // Comparar colas
+    // q_individuos vs q_entrada
+    
+    queue<string> q_final;
+    
+    while(not q_entrada.empty() and q_individuos.empty()){
+      if(q_entrada.front() == q_individuos.front()){
+        q_final.push(q_entrada.front());
+        q_entrada.pop();
+        q_individuos.pop();
+      }
+      else if(q_entrada.front() != "$") {
+        return false;
+      }
+      else {
+        // Encontrar siguiente elemento no desconocido
+        while(not q_entrada.empty() and q_entrada.front() == "$"){
+          q_entrada.pop();
+        }
+        
+        // Si toda la lista restante es desconocida
+        if(q_entrada.empty()){
+          while(not q_individuos.empty()){
+            q_final.push("*"+q_individuos.front()+"*");
+            q_individuos.pop();
+          }
+        }
+        
+        // Si hay un elemento conocido
+        else {
+          while(not q_individuos.empty() and q_individuos.front() != q_entrada.front()){
+            q_final.push("*"+q_individuos.front()+"*");
+            q_individuos.pop();
+          }
+        }
+      }
+    }
+    
+    // PRINT
+    bool first = true;
+    while(not q_final.empty()){
+      if(first){
+        cout << q_final.front();
+        first = false;
+      }
+      else cout << ' ' << q_final.front();
+      q_final.pop();
+    }
+    cout << endl;
+  
+    return true;
+    
+  } else return false;
 }
 
 void Poblacion::leer(const Especie &esp){

@@ -62,12 +62,20 @@ int main() {
 
     // Completar arbol genealogico
     else if (s == "completar_arbol_genealogico"){
-      queue<string> q;
+      queue<string> q_entrada;
       string ind;
-      while(cin >> ind) q.push(ind);
+      
+      int finish_entrada = 1;
+      int dollar = 0;
+      while(dollar < finish_entrada){
+        cin >> ind;
+        if(ind == "$") ++dollar;
+        else ++finish_entrada;
+        q_entrada.push(ind);
+      }
 
-      cout << "completar_arbol_genealogico " << q.front() << endl;
-      pob.completar_arbol_genealogico(q);
+      cout << "completar_arbol_genealogico " << q_entrada.front() << endl;
+      pob.completar_arbol_genealogico(q_entrada);
     }
 
     // Escribir poblacion

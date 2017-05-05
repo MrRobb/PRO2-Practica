@@ -46,6 +46,7 @@ private:
    */
   bool es_antecesor(string hijo, const string &antecesor);
 
+  void i_escribir_padres(queue<string> &q_individuos, string ind);
   
 public:
 
@@ -86,7 +87,7 @@ public:
    \pre elem_arb_incom es una cola de elementos que representan el arbol parcial de una poblacion, si el arbol no es parcial se escribira un error: 'no es arbol parcial'.
    \post Se escribe el arbol completado con aquellos individuos de la poblacion que faltaban.
    */
-  void completar_arbol_genealogico(queue<string> &elem_arb_incom);
+  bool completar_arbol_genealogico(queue<string> &elem_arb_incom);
 
   // Lectura y escritura
   
