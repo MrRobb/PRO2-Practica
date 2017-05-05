@@ -12,7 +12,6 @@ Especie::Especie(){
   N = 0;
   lx = 0;
   ly = 0;
-  v_li = vector<int> (0);
 }
 
 int Especie::consultar_pares_cromosomas() const {

@@ -12,21 +12,21 @@ Representa un individuo de la especie.
 \begin{DoxyCompactList}\small\item\em Creadora por defecto. \end{DoxyCompactList}\item 
 \hyperlink{class_individuo_aa4e303d7179a1ad0f0f2986d093d830a}{Individuo} (string nombre, const \hyperlink{class_individuo}{Individuo} \&madre, const \hyperlink{class_individuo}{Individuo} \&padre, const \hyperlink{class_especie}{Especie} \&esp)
 \begin{DoxyCompactList}\small\item\em Crea un individuo a partir de los genotipos de los progenitores. \end{DoxyCompactList}\item 
-bool \hyperlink{class_individuo_a35c602df3c6e1f186b7494513208b716}{tiene\+\_\+ascendientes} () const
+bool \hyperlink{class_individuo_ac30b51c4b8268e4e2cd0f3ac77f20b07}{tiene\+\_\+ascendientes} () const 
 \begin{DoxyCompactList}\small\item\em Consultora de si tiene ascendientes. \end{DoxyCompactList}\item 
-bool \hyperlink{class_individuo_a27159ca95f0e9d8b14685dfa40f4e563}{consultar\+\_\+es\+\_\+masculino} () const
+bool \hyperlink{class_individuo_a40c32d5439ebad9b120c582bf172d116}{consultar\+\_\+es\+\_\+masculino} () const 
 \begin{DoxyCompactList}\small\item\em Consultora de su sexo. \end{DoxyCompactList}\item 
-string \hyperlink{class_individuo_aa9a26cf22c424ced4ca468af5f203300}{consultar\+\_\+nombre} () const
+string \hyperlink{class_individuo_a0256784d237c97bdbd515bebc1d75574}{consultar\+\_\+nombre} () const 
 \begin{DoxyCompactList}\small\item\em Consultora de su nombre. \end{DoxyCompactList}\item 
-string \hyperlink{class_individuo_a33f3985445a0e56e09b6bc405c6518f7}{consultar\+\_\+madre} () const
+string \hyperlink{class_individuo_a9de458f5ab162422902d067d717eb5d7}{consultar\+\_\+madre} () const 
 \begin{DoxyCompactList}\small\item\em Consultora del nombre de su madre. \end{DoxyCompactList}\item 
-string \hyperlink{class_individuo_aa31ffa85aa6631315fc08dee6ef1845a}{consultar\+\_\+padre} () const
+string \hyperlink{class_individuo_a255f1cc78dd6c3c079f90b165c8fc1d2}{consultar\+\_\+padre} () const 
 \begin{DoxyCompactList}\small\item\em Consultora del nombre de su padre. \end{DoxyCompactList}\item 
 void \hyperlink{class_individuo_aca2828dea808d8a09b6bc22719dca574}{leer} (const \hyperlink{class_especie}{Especie} \&esp)
 \begin{DoxyCompactList}\small\item\em Lee un individuo. \end{DoxyCompactList}\item 
-void \hyperlink{class_individuo_afa626864f948a749bfb3ca277c316105}{escribir} () const
+void \hyperlink{class_individuo_aac432efd9d67a6c3773c226e05d4de02}{escribir} () const 
 \begin{DoxyCompactList}\small\item\em Escribe un individuo. \end{DoxyCompactList}\item 
-void \hyperlink{class_individuo_a709b63adb89ff41fec3f2a59cbb560a2}{escribir\+\_\+genotipo} () const
+void \hyperlink{class_individuo_adb6531d01a1dfb1613ff87b2a22c1d4b}{escribir\+\_\+genotipo} () const 
 \begin{DoxyCompactList}\small\item\em Escribe el genotipo de un individuo. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -40,12 +40,13 @@ Definición en la línea 25 del archivo Individuo.\+hh.
 
 
 \subsection{Documentación del constructor y destructor}
-\mbox{\Hypertarget{class_individuo_a3042a660b9789ee24dd3658248c8e0b9}\label{class_individuo_a3042a660b9789ee24dd3658248c8e0b9}} 
 \index{Individuo@{Individuo}!Individuo@{Individuo}}
 \index{Individuo@{Individuo}!Individuo@{Individuo}}
-\subsubsection{\texorpdfstring{Individuo()}{Individuo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Individuo\+::\+Individuo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{Individuo()}{Individuo()}}]{\setlength{\rightskip}{0pt plus 5cm}Individuo\+::\+Individuo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_individuo_a3042a660b9789ee24dd3658248c8e0b9}{}\label{class_individuo_a3042a660b9789ee24dd3658248c8e0b9}
 
 
 Creadora por defecto. 
@@ -56,12 +57,16 @@ Se ejecuta automáticamente al declarar un individuo. \begin{DoxyPrecond}{Precon
 \begin{DoxyPostcond}{Postcondición}
 El resultado es un individuo sin leer, es decir, sin información genética, ni nombre, ni padres, ni sexo. 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{class_individuo_aa4e303d7179a1ad0f0f2986d093d830a}\label{class_individuo_aa4e303d7179a1ad0f0f2986d093d830a}} 
 \index{Individuo@{Individuo}!Individuo@{Individuo}}
 \index{Individuo@{Individuo}!Individuo@{Individuo}}
-\subsubsection{\texorpdfstring{Individuo()}{Individuo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Individuo\+::\+Individuo (\begin{DoxyParamCaption}\item[{string}]{nombre,  }\item[{const \hyperlink{class_individuo}{Individuo} \&}]{madre,  }\item[{const \hyperlink{class_individuo}{Individuo} \&}]{padre,  }\item[{const \hyperlink{class_especie}{Especie} \&}]{esp }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{Individuo(string nombre, const Individuo \&madre, const Individuo \&padre, const Especie \&esp)}{Individuo(string nombre, const Individuo &madre, const Individuo &padre, const Especie &esp)}}]{\setlength{\rightskip}{0pt plus 5cm}Individuo\+::\+Individuo (
+\begin{DoxyParamCaption}
+\item[{string}]{nombre, }
+\item[{const {\bf Individuo} \&}]{madre, }
+\item[{const {\bf Individuo} \&}]{padre, }
+\item[{const {\bf Especie} \&}]{esp}
+\end{DoxyParamCaption}
+)}\hypertarget{class_individuo_aa4e303d7179a1ad0f0f2986d093d830a}{}\label{class_individuo_aa4e303d7179a1ad0f0f2986d093d830a}
 
 
 Crea un individuo a partir de los genotipos de los progenitores. 
@@ -80,12 +85,13 @@ Se crea un individuo hijo de padre y hijo de madre a partir los genotipos de los
 
 
 \subsection{Documentación de las funciones miembro}
-\mbox{\Hypertarget{class_individuo_a35c602df3c6e1f186b7494513208b716}\label{class_individuo_a35c602df3c6e1f186b7494513208b716}} 
 \index{Individuo@{Individuo}!tiene\+\_\+ascendientes@{tiene\+\_\+ascendientes}}
 \index{tiene\+\_\+ascendientes@{tiene\+\_\+ascendientes}!Individuo@{Individuo}}
-\subsubsection{\texorpdfstring{tiene\+\_\+ascendientes()}{tiene\_ascendientes()}}
-{\footnotesize\ttfamily bool Individuo\+::tiene\+\_\+ascendientes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
+\subsubsection[{\texorpdfstring{tiene\+\_\+ascendientes() const }{tiene_ascendientes() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Individuo\+::tiene\+\_\+ascendientes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_individuo_ac30b51c4b8268e4e2cd0f3ac77f20b07}{}\label{class_individuo_ac30b51c4b8268e4e2cd0f3ac77f20b07}
 
 
 Consultora de si tiene ascendientes. 
@@ -96,12 +102,13 @@ cierto.
 \begin{DoxyPostcond}{Postcondición}
 Devuelve true si tiene padre o madre y false si no. 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{class_individuo_a27159ca95f0e9d8b14685dfa40f4e563}\label{class_individuo_a27159ca95f0e9d8b14685dfa40f4e563}} 
 \index{Individuo@{Individuo}!consultar\+\_\+es\+\_\+masculino@{consultar\+\_\+es\+\_\+masculino}}
 \index{consultar\+\_\+es\+\_\+masculino@{consultar\+\_\+es\+\_\+masculino}!Individuo@{Individuo}}
-\subsubsection{\texorpdfstring{consultar\+\_\+es\+\_\+masculino()}{consultar\_es\_masculino()}}
-{\footnotesize\ttfamily bool Individuo\+::consultar\+\_\+es\+\_\+masculino (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
+\subsubsection[{\texorpdfstring{consultar\+\_\+es\+\_\+masculino() const }{consultar_es_masculino() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Individuo\+::consultar\+\_\+es\+\_\+masculino (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_individuo_a40c32d5439ebad9b120c582bf172d116}{}\label{class_individuo_a40c32d5439ebad9b120c582bf172d116}
 
 
 Consultora de su sexo. 
@@ -112,12 +119,13 @@ cierto.
 \begin{DoxyPostcond}{Postcondición}
 Devuelve true si es masculino y false si es femenino. 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{class_individuo_aa9a26cf22c424ced4ca468af5f203300}\label{class_individuo_aa9a26cf22c424ced4ca468af5f203300}} 
 \index{Individuo@{Individuo}!consultar\+\_\+nombre@{consultar\+\_\+nombre}}
 \index{consultar\+\_\+nombre@{consultar\+\_\+nombre}!Individuo@{Individuo}}
-\subsubsection{\texorpdfstring{consultar\+\_\+nombre()}{consultar\_nombre()}}
-{\footnotesize\ttfamily string Individuo\+::consultar\+\_\+nombre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
+\subsubsection[{\texorpdfstring{consultar\+\_\+nombre() const }{consultar_nombre() const }}]{\setlength{\rightskip}{0pt plus 5cm}string Individuo\+::consultar\+\_\+nombre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_individuo_a0256784d237c97bdbd515bebc1d75574}{}\label{class_individuo_a0256784d237c97bdbd515bebc1d75574}
 
 
 Consultora de su nombre. 
@@ -128,12 +136,13 @@ cierto.
 \begin{DoxyPostcond}{Postcondición}
 Devuelve el nombre del individuo. 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{class_individuo_a33f3985445a0e56e09b6bc405c6518f7}\label{class_individuo_a33f3985445a0e56e09b6bc405c6518f7}} 
 \index{Individuo@{Individuo}!consultar\+\_\+madre@{consultar\+\_\+madre}}
 \index{consultar\+\_\+madre@{consultar\+\_\+madre}!Individuo@{Individuo}}
-\subsubsection{\texorpdfstring{consultar\+\_\+madre()}{consultar\_madre()}}
-{\footnotesize\ttfamily string Individuo\+::consultar\+\_\+madre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
+\subsubsection[{\texorpdfstring{consultar\+\_\+madre() const }{consultar_madre() const }}]{\setlength{\rightskip}{0pt plus 5cm}string Individuo\+::consultar\+\_\+madre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_individuo_a9de458f5ab162422902d067d717eb5d7}{}\label{class_individuo_a9de458f5ab162422902d067d717eb5d7}
 
 
 Consultora del nombre de su madre. 
@@ -144,12 +153,13 @@ cierto.
 \begin{DoxyPostcond}{Postcondición}
 Devuelve el nombre de la madre del individuo. 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{class_individuo_aa31ffa85aa6631315fc08dee6ef1845a}\label{class_individuo_aa31ffa85aa6631315fc08dee6ef1845a}} 
 \index{Individuo@{Individuo}!consultar\+\_\+padre@{consultar\+\_\+padre}}
 \index{consultar\+\_\+padre@{consultar\+\_\+padre}!Individuo@{Individuo}}
-\subsubsection{\texorpdfstring{consultar\+\_\+padre()}{consultar\_padre()}}
-{\footnotesize\ttfamily string Individuo\+::consultar\+\_\+padre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
+\subsubsection[{\texorpdfstring{consultar\+\_\+padre() const }{consultar_padre() const }}]{\setlength{\rightskip}{0pt plus 5cm}string Individuo\+::consultar\+\_\+padre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_individuo_a255f1cc78dd6c3c079f90b165c8fc1d2}{}\label{class_individuo_a255f1cc78dd6c3c079f90b165c8fc1d2}
 
 
 Consultora del nombre de su padre. 
@@ -160,12 +170,13 @@ cierto.
 \begin{DoxyPostcond}{Postcondición}
 Devuelve el nombre del padre del individuo. 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{class_individuo_aca2828dea808d8a09b6bc22719dca574}\label{class_individuo_aca2828dea808d8a09b6bc22719dca574}} 
 \index{Individuo@{Individuo}!leer@{leer}}
 \index{leer@{leer}!Individuo@{Individuo}}
-\subsubsection{\texorpdfstring{leer()}{leer()}}
-{\footnotesize\ttfamily void Individuo\+::leer (\begin{DoxyParamCaption}\item[{const \hyperlink{class_especie}{Especie} \&}]{esp }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{leer(const Especie \&esp)}{leer(const Especie &esp)}}]{\setlength{\rightskip}{0pt plus 5cm}void Individuo\+::leer (
+\begin{DoxyParamCaption}
+\item[{const {\bf Especie} \&}]{esp}
+\end{DoxyParamCaption}
+)}\hypertarget{class_individuo_aca2828dea808d8a09b6bc22719dca574}{}\label{class_individuo_aca2828dea808d8a09b6bc22719dca574}
 
 
 Lee un individuo. 
@@ -182,12 +193,13 @@ esp es la especie del individuo.
 \begin{DoxyPostcond}{Postcondición}
 Se almacena la informacion en el individuo de la especie esp. 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{class_individuo_afa626864f948a749bfb3ca277c316105}\label{class_individuo_afa626864f948a749bfb3ca277c316105}} 
 \index{Individuo@{Individuo}!escribir@{escribir}}
 \index{escribir@{escribir}!Individuo@{Individuo}}
-\subsubsection{\texorpdfstring{escribir()}{escribir()}}
-{\footnotesize\ttfamily void Individuo\+::escribir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
+\subsubsection[{\texorpdfstring{escribir() const }{escribir() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Individuo\+::escribir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_individuo_aac432efd9d67a6c3773c226e05d4de02}{}\label{class_individuo_aac432efd9d67a6c3773c226e05d4de02}
 
 
 Escribe un individuo. 
@@ -198,12 +210,13 @@ cierto.
 \begin{DoxyPostcond}{Postcondición}
 Se escribe el nombre del individuo, el sexo, y los padres (si no tiene son \$). 
 \end{DoxyPostcond}
-\mbox{\Hypertarget{class_individuo_a709b63adb89ff41fec3f2a59cbb560a2}\label{class_individuo_a709b63adb89ff41fec3f2a59cbb560a2}} 
 \index{Individuo@{Individuo}!escribir\+\_\+genotipo@{escribir\+\_\+genotipo}}
 \index{escribir\+\_\+genotipo@{escribir\+\_\+genotipo}!Individuo@{Individuo}}
-\subsubsection{\texorpdfstring{escribir\+\_\+genotipo()}{escribir\_genotipo()}}
-{\footnotesize\ttfamily void Individuo\+::escribir\+\_\+genotipo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
+\subsubsection[{\texorpdfstring{escribir\+\_\+genotipo() const }{escribir_genotipo() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Individuo\+::escribir\+\_\+genotipo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_individuo_adb6531d01a1dfb1613ff87b2a22c1d4b}{}\label{class_individuo_adb6531d01a1dfb1613ff87b2a22c1d4b}
 
 
 Escribe el genotipo de un individuo. 

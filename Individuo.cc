@@ -10,16 +10,16 @@
 Individuo::Individuo(){
   padre = "";
   madre = "";
-  adn = vector< vector<Cromosoma> > (0, vector<Cromosoma>(2));
 }
 
-Individuo::Individuo(string nombre, const Individuo &madre, const Individuo &padre, const Especie &esp){
+Individuo::Individuo(string nombre, string nombre_madre, string nombre_padre, const Individuo &madre, const Individuo &padre, const Especie &esp){
   int N = esp.consultar_pares_cromosomas();
   (*this).adn = vector< vector<Cromosoma> > (N+1, vector<Cromosoma>(2));
   
   for(int i = 0; i <= N; ++i){
     int c1, c2, k;
     cin >> c1 >> c2 >> k;
+    
     if(i != 0){
       (*this).adn[i][0] = madre.adn[i][c1].cruzamiento_normales(padre.adn[i][c2], k);
       (*this).adn[i][1] = padre.adn[i][c2].cruzamiento_normales(madre.adn[i][c1], k);
@@ -29,9 +29,9 @@ Individuo::Individuo(string nombre, const Individuo &madre, const Individuo &pad
       (*this).adn[i][1] = padre.adn[i][c2].cruzamiento_sexuales(madre.adn[i][c1], k, esp.consultar_longitud_cromosoma_normal(i));
     }
   }
-  (*this).padre = padre.nombre;
-  (*this).madre = madre.nombre;
-  (*this).nombre = nombre;
+  
+  (*this).padre = nombre_padre;
+  (*this).madre = nombre_madre;
 }
 
 bool Individuo::tiene_ascendientes() const {
@@ -40,10 +40,6 @@ bool Individuo::tiene_ascendientes() const {
 
 bool Individuo::consultar_es_masculino() const {
   return es_masculino;
-}
-
-string Individuo::consultar_nombre() const {
-  return nombre;
 }
 
 string Individuo::consultar_madre() const {
@@ -55,7 +51,6 @@ string Individuo::consultar_padre() const {
 }
 
 void Individuo::leer(const Especie &esp){
-  cin >> nombre;
   string sexo; cin >> sexo;
   es_masculino = (sexo == "Y");
   
@@ -78,9 +73,6 @@ void Individuo::leer(const Especie &esp){
 }
 
 void Individuo::escribir() const {
-  // Nombre
-  cout << "  " << nombre << ' ';
-  
   // Sexo
   if(es_masculino) cout << "XY ";
   else cout << "XX ";

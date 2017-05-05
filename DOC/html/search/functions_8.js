@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tiene_5fascendientes',['tiene_ascendientes',['../class_individuo.html#a35c602df3c6e1f186b7494513208b716',1,'Individuo']]]
+  ['tiene_5fascendientes',['tiene_ascendientes',['../class_individuo.html#ac30b51c4b8268e4e2cd0f3ac77f20b07',1,'Individuo']]]
 ];

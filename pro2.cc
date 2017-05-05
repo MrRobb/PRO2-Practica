@@ -1,13 +1,21 @@
 /**
  * @mainpage Práctica de PRO2:  Experimentos genéticos de laboratorio.
+ * 
+ * En esta práctica se construye un programa modular que ofrece un menú de opciones para gestionar la creación y reproducción de individuos de una especie concreta y la evolución de su estructura genética. Se introducen las clases: <em>Cromosoma</em>, <em>Individuo</em>, <em>Poblacion</em> y <em>Especie</em>.
+ * 
+ * Sólo se documentan elementos públicos de los .hh y el programa principal. En una próxima versión se documentarán los demás elementos.
  */
 
 /** @file pro2.cc
     @brief Programa principal para la práctica de PRO2: <em>Experimentos genéticos de laboratorio</em>.
 */
 
+#ifndef NO_DIAGRAM      // ver explicacion en Cromosoma.hh
 #include <iostream>
 #include <queue>
+#include <vector>
+#endif 
+
 #include "Cromosoma.hh"
 #include "Individuo.hh"
 #include "Poblacion.hh"
@@ -30,30 +38,26 @@ int main() {
   while (cin >> s and s != "acabar") {
     // Añadir individuo
     if (s == "anadir_individuo") {
+      string nombre; cin >> nombre;
       Individuo(ind);
       ind.leer(esp);
-      cout << "anadir_individuo " << ind.consultar_nombre() << endl;
-      pob.anadir_individuo(ind);
+      cout << "anadir_individuo " << nombre << endl;
+      pob.anadir_individuo(nombre, ind);
     }
 
     // Reproducir individuos
     else if (s == "reproduccion_sexual"){
-      int N = esp.consultar_pares_cromosomas();
-      vector<vector<int> > mat_rep (N+1, vector<int> (3));
       string madre, padre, hijo;
       cin >> madre >> padre >> hijo;
-      for(int i = 0; i < N+1; ++i){
-        for(int j = 0; j < 3; ++j) cin >> mat_rep[i][j];
-      }
       cout << "reproduccion_sexual " << madre << ' ' << padre << ' ' << hijo << endl;
-      pob.reproducir(madre, padre, hijo, mat_rep, esp);
+      pob.reproducir(madre, padre, hijo, esp);
     }
 
     // Escribir arbol de un individuo
     else if (s == "escribir_arbol_genealogico"){
       string ind; cin >> ind;
       cout << "escribir_arbol_genealogico " << ind << endl;
-      pob.escribir_arbol(ind);
+      pob.escribir_por_niveles(ind);
     }
 
     // Completar arbol genealogico

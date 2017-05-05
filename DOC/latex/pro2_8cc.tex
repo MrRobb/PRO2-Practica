@@ -5,8 +5,13 @@
 Programa principal para la práctica de P\+R\+O2\+: {\itshape Experimentos genéticos de laboratorio}.  
 
 
-Dependencia gráfica adjunta para pro2.\+cc\+:
-% FIG 0
+Dependencia gráfica adjunta para pro2.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{pro2_8cc__incl}
+\end{center}
+\end{figure}
 \subsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,84 +25,85 @@ Programa principal para la práctica de P\+R\+O2\+: {\itshape Experimentos gené
 
 
 \subsection{Documentación de las funciones}
-\mbox{\Hypertarget{pro2_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{pro2_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
 \index{pro2.\+cc@{pro2.\+cc}!main@{main}}
 \index{main@{main}!pro2.\+cc@{pro2.\+cc}}
-\subsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{pro2_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{pro2_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}
 
 
-
-Definición en la línea 21 del archivo pro2.\+cc.
+Definición en la línea 29 del archivo pro2.\+cc.
 
 
 \begin{DoxyCode}
-21            \{
-22   \textcolor{comment}{// Inicialitzar}
-23   \hyperlink{class_especie}{Especie}(esp);
-24   esp.leer();
-25 
-26   \hyperlink{class_poblacion}{Poblacion}(pob);
-27   pob.leer(esp);
-28 
-29   \textcolor{keywordtype}{string} s;
-30   \textcolor{keywordflow}{while} (cin >> s and s != \textcolor{stringliteral}{"acabar"}) \{
-31     \textcolor{comment}{// Añadir individuo}
-32     \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"anadir\_individuo"}) \{
-33       \hyperlink{class_individuo}{Individuo}(ind);
-34       ind.leer(esp);
-35       cout << \textcolor{stringliteral}{"anadir\_individuo "} << ind.consultar\_nombre() << endl;
-36       pob.anadir\_individuo(ind);
-37     \}
-38 
-39     \textcolor{comment}{// Reproducir individuos}
-40     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"reproduccion\_sexual"})\{
-41       \textcolor{keywordtype}{int} N = esp.consultar\_pares\_cromosomas();
-42       vector<vector<int> > mat\_rep (N+1, vector<int> (3));
-43       \textcolor{keywordtype}{string} madre, padre, hijo;
-44       cin >> madre >> padre >> hijo;
-45       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < N+1; ++i)\{
-46         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < 3; ++j) cin >> mat\_rep[i][j];
-47       \}
-48       cout << \textcolor{stringliteral}{"reproduccion\_sexual "} << madre << \textcolor{charliteral}{' '} << padre << \textcolor{charliteral}{' '} << hijo << endl;
-49       pob.reproducir(madre, padre, hijo, mat\_rep, esp);
-50     \}
-51 
-52     \textcolor{comment}{// Escribir arbol de un individuo}
-53     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"escribir\_arbol\_genealogico"})\{
-54       \textcolor{keywordtype}{string} ind; cin >> ind;
-55       cout << \textcolor{stringliteral}{"escribir\_arbol\_genealogico "} << ind << endl;
-56       pob.escribir\_arbol(ind);
-57     \}
-58 
-59     \textcolor{comment}{// Completar arbol genealogico}
-60     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"completar\_arbol\_genealogico"})\{
-61       queue<string> q;
-62       \textcolor{keywordtype}{string} ind;
-63       \textcolor{keywordflow}{while}(cin >> ind) q.push(ind);
-64 
-65       cout << \textcolor{stringliteral}{"completar\_arbol\_genealogico "} << q.front() << endl;
-66       pob.completar\_arbol\_genealogico(q);
-67     \}
-68 
-69     \textcolor{comment}{// Escribir poblacion}
-70     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"escribir\_poblacion"})\{
-71       cout << \textcolor{stringliteral}{"escribir\_poblacion"} << endl;
-72       pob.escribir();
-73     \}
-74 
-75     \textcolor{comment}{// Escribir genotipo}
-76     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"escribir\_genotipo"})\{
-77       \textcolor{keywordtype}{string} s; cin >> s;
-78       cout << \textcolor{stringliteral}{"escribir\_genotipo "} << s << endl;
-79       pob.escribir\_genotipo(s);
-80     \}
-81 
-82     \textcolor{comment}{// Fin}
-83     \textcolor{keywordflow}{else} \{
-84       \textcolor{keywordflow}{return} 0;
-85     \}
-86   \}
-87 
-88 \}
+29            \{
+30   \textcolor{comment}{// Inicialitzar}
+31   \hyperlink{class_especie}{Especie}(esp);
+32   esp.leer();
+33 
+34   \hyperlink{class_poblacion}{Poblacion}(pob);
+35   pob.leer(esp);
+36 
+37   \textcolor{keywordtype}{string} s;
+38   \textcolor{keywordflow}{while} (cin >> s and s != \textcolor{stringliteral}{"acabar"}) \{
+39     \textcolor{comment}{// Añadir individuo}
+40     \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"anadir\_individuo"}) \{
+41       \hyperlink{class_individuo}{Individuo}(ind);
+42       ind.leer(esp);
+43       cout << \textcolor{stringliteral}{"anadir\_individuo "} << ind.consultar\_nombre() << endl;
+44       pob.anadir\_individuo(ind);
+45     \}
+46 
+47     \textcolor{comment}{// Reproducir individuos}
+48     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"reproduccion\_sexual"})\{
+49       \textcolor{keywordtype}{int} N = esp.consultar\_pares\_cromosomas();
+50       vector<vector<int> > mat\_rep (N+1, vector<int> (3));
+51       \textcolor{keywordtype}{string} madre, padre, hijo;
+52       cin >> madre >> padre >> hijo;
+53       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < N+1; ++i)\{
+54         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < 3; ++j) cin >> mat\_rep[i][j];
+55       \}
+56       cout << \textcolor{stringliteral}{"reproduccion\_sexual "} << madre << \textcolor{charliteral}{' '} << padre << \textcolor{charliteral}{' '} << hijo << endl;
+57       pob.reproducir(madre, padre, hijo, mat\_rep, esp);
+58     \}
+59 
+60     \textcolor{comment}{// Escribir arbol de un individuo}
+61     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"escribir\_arbol\_genealogico"})\{
+62       \textcolor{keywordtype}{string} ind; cin >> ind;
+63       cout << \textcolor{stringliteral}{"escribir\_arbol\_genealogico "} << ind << endl;
+64       pob.escribir\_arbol(ind);
+65     \}
+66 
+67     \textcolor{comment}{// Completar arbol genealogico}
+68     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"completar\_arbol\_genealogico"})\{
+69       queue<string> q;
+70       \textcolor{keywordtype}{string} ind;
+71       \textcolor{keywordflow}{while}(cin >> ind) q.push(ind);
+72 
+73       cout << \textcolor{stringliteral}{"completar\_arbol\_genealogico "} << q.front() << endl;
+74       pob.completar\_arbol\_genealogico(q);
+75     \}
+76 
+77     \textcolor{comment}{// Escribir poblacion}
+78     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"escribir\_poblacion"})\{
+79       cout << \textcolor{stringliteral}{"escribir\_poblacion"} << endl;
+80       pob.escribir();
+81     \}
+82 
+83     \textcolor{comment}{// Escribir genotipo}
+84     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"escribir\_genotipo"})\{
+85       \textcolor{keywordtype}{string} s; cin >> s;
+86       cout << \textcolor{stringliteral}{"escribir\_genotipo "} << s << endl;
+87       pob.escribir\_genotipo(s);
+88     \}
+89 
+90     \textcolor{comment}{// Fin}
+91     \textcolor{keywordflow}{else} \{
+92       \textcolor{keywordflow}{return} 0;
+93     \}
+94   \}
+95 
+96 \}
 \end{DoxyCode}

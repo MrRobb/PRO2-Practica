@@ -30,7 +30,7 @@ class Individuo {
    */
 
 private:
-  string nombre, padre, madre;
+  string padre, madre;
   bool es_masculino;
   vector< vector<Cromosoma> > adn;
 
@@ -63,7 +63,7 @@ public:
    
    \post Se crea un individuo hijo de padre y hijo de madre a partir los genotipos de los padres, segun los datos de entrada.
    */
-  Individuo(string nombre, const Individuo &madre, const Individuo &padre, const Especie &esp);
+  Individuo(string nombre, string nombre_madre, string nombre_padre, const Individuo &madre, const Individuo &padre, const Especie &esp);
   
 
   // Destructora
@@ -83,12 +83,6 @@ public:
    \post Devuelve true si es masculino y false si es femenino.
    */
   bool consultar_es_masculino() const;
-  
-  /** @brief Consultora de su nombre
-   \pre cierto.
-   \post Devuelve el nombre del individuo.
-   */
-  string consultar_nombre() const;
   
   /** @brief Consultora del nombre de su madre
    \pre cierto.
