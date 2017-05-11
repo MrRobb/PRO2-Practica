@@ -101,7 +101,7 @@ void Individuo::escribir_genotipo() const {
   int size = int(adn.size());
   for(int i = 1; i < size; ++i){
     for(int j = 1; j <= 2; ++j){
-      cout << i << '.' << j << ':';
+      cout << "  " << i << '.' << j << ':';
       if(j == 1) adn[i][0].escribir();
       else adn[i][1].escribir();
       cout << endl;

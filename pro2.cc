@@ -96,7 +96,7 @@ int main() {
     else {
       return 0;
     }
-    cout << "acabar" << endl;
   }
+  cout << "acabar" << endl;
 
 }
