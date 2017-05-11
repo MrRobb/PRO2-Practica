@@ -75,7 +75,8 @@ int main() {
       }
 
       cout << "completar_arbol_genealogico " << q_entrada.front() << endl;
-      pob.completar_arbol_genealogico(q_entrada);
+      bool b = pob.completar_arbol_genealogico(q_entrada);
+      if(not b) cout << "  no es arbol parcial" << endl;
     }
 
     // Escribir poblacion
@@ -93,6 +94,7 @@ int main() {
 
     // Fin
     else {
+      cout << "acabar" << endl;
       return 0;
     }
   }

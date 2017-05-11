@@ -63,7 +63,7 @@ public:
    
    \post Se crea un individuo hijo de padre y hijo de madre a partir los genotipos de los padres, segun los datos de entrada.
    */
-  Individuo(string nombre, string nombre_madre, string nombre_padre, const Individuo &madre, const Individuo &padre, const Especie &esp);
+  Individuo(string nombre_madre, string nombre_padre, const Individuo &madre, const Individuo &padre, const Especie &esp);
   
 
   // Destructora

@@ -37,10 +37,10 @@ void Poblacion::i_escribir_padres(queue<string> &q_individuos, string ind){
     q_individuos.push("$");
     q_individuos.push("$");
   } else {
-    q_individuos.push(madre);
-    i_escribir_padres(q_individuos, madre);
     q_individuos.push(padre);
     i_escribir_padres(q_individuos, padre);
+    q_individuos.push(madre);
+    i_escribir_padres(q_individuos, madre);
   }
 }
 
@@ -90,7 +90,7 @@ void Poblacion::reproducir(string madre, string padre, string hijo, const Especi
                   if(!es_antecesor(padre, madre)){
                   
                   // Reproducir
-                    pob[hijo] = Individuo(hijo, madre, padre, pob[madre], pob[padre], esp);
+                    pob[hijo] = Individuo(madre, padre, pob[madre], pob[padre], esp);
                     b = 2;
                   }
                 }
@@ -139,7 +139,7 @@ bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
     
     queue<string> q_final;
     
-    while(not q_entrada.empty() and q_individuos.empty()){
+    while(not q_entrada.empty() and not q_individuos.empty()){
       if(q_entrada.front() == q_individuos.front()){
         q_final.push(q_entrada.front());
         q_entrada.pop();
@@ -157,7 +157,8 @@ bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
         // Si toda la lista restante es desconocida
         if(q_entrada.empty()){
           while(not q_individuos.empty()){
-            q_final.push("*"+q_individuos.front()+"*");
+            if(q_individuos.front() != "$")q_final.push("*"+q_individuos.front()+"*");
+            else q_final.push("$");
             q_individuos.pop();
           }
         }
@@ -165,7 +166,8 @@ bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
         // Si hay un elemento conocido
         else {
           while(not q_individuos.empty() and q_individuos.front() != q_entrada.front()){
-            q_final.push("*"+q_individuos.front()+"*");
+            if(q_individuos.front() != "$")q_final.push("*"+q_individuos.front()+"*");
+            else q_final.push("$");
             q_individuos.pop();
           }
         }
@@ -174,6 +176,7 @@ bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
     
     // PRINT
     bool first = true;
+    cout << "  ";
     while(not q_final.empty()){
       if(first){
         cout << q_final.front();
@@ -251,12 +254,13 @@ void Poblacion::escribir_por_niveles(string ind) {
       if(nivel != q_niveles.front()){
         nivel = q_niveles.front();
         if(nivel != 0) cout << endl;
-        cout << "Nivel " << nivel << ":";
+        cout << "  Nivel " << nivel << ":";
       }
       cout << " " << q_individuos.front();
       q_niveles.pop();
       q_individuos.pop();
     }
+    cout << endl;
     
   } else {
     cout << "  error" << endl;

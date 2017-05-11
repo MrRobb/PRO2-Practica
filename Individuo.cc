@@ -12,7 +12,7 @@ Individuo::Individuo(){
   madre = "";
 }
 
-Individuo::Individuo(string nombre, string nombre_madre, string nombre_padre, const Individuo &madre, const Individuo &padre, const Especie &esp){
+Individuo::Individuo(string nombre_madre, string nombre_padre, const Individuo &madre, const Individuo &padre, const Especie &esp){
   int N = esp.consultar_pares_cromosomas();
   (*this).adn = vector< vector<Cromosoma> > (N+1, vector<Cromosoma>(2));
   
