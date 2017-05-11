@@ -238,10 +238,10 @@ void Poblacion::escribir_por_niveles(string ind) {
       padre = pob[q_recorridos.front()].consultar_padre();
       
       if(madre != "" and padre != ""){
-        q_recorridos.push(madre);
         q_recorridos.push(padre);
-        q_individuos.push(madre);
+        q_recorridos.push(madre);
         q_individuos.push(padre);
+        q_individuos.push(madre);
         q_niveles.push(q_niveles.front()+1);
         q_niveles.push(q_niveles.front()+1);
       }

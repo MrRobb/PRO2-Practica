@@ -94,9 +94,9 @@ int main() {
 
     // Fin
     else {
-      cout << "acabar" << endl;
       return 0;
     }
+    cout << "acabar" << endl;
   }
 
 }

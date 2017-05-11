@@ -88,13 +88,13 @@ void Individuo::escribir() const {
 
 void Individuo::escribir_genotipo() const {
   // Sexuales
-  cout << "X:"; adn[0][0].escribir(); cout << endl;;
+  cout << "  X:"; adn[0][0].escribir(); cout << endl;;
   
   if(es_masculino) {
-    cout << "Y:"; adn[0][1].escribir(); cout << endl;
+    cout << "  Y:"; adn[0][1].escribir(); cout << endl;
   }
   else {
-    cout << "X:"; adn[0][1].escribir(); cout << endl;
+    cout << "  X:"; adn[0][1].escribir(); cout << endl;
   }
   
   // Normales
