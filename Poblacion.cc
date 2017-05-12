@@ -135,8 +135,6 @@ bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
     i_escribir_padres(q_individuos, ind);
     
     // Comparar colas
-    // q_individuos vs q_entrada
-    
     queue<string> q_final;
     
     while(not q_entrada.empty() and not q_individuos.empty()){
@@ -149,7 +147,7 @@ bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
         return false;
       }
       else {
-        // Encontrar siguiente elemento no desconocido
+        // Encontrar siguiente elemento no desconocido de entrada
         while(not q_entrada.empty() and q_entrada.front() == "$"){
           q_entrada.pop();
         }
@@ -233,12 +231,12 @@ void Poblacion::escribir_por_niveles(string ind) {
     
     // BFS
     while (!q_individuos.empty()) {
-      // PROGENITORES
+      // Progenitores
       madre = pob[q_individuos.front()].consultar_madre();
       padre = pob[q_individuos.front()].consultar_padre();
       
       
-      // PRINT
+      // Print
       if(q_niveles.front() != nivel_anterior){
         if(nivel_anterior != -1) cout << endl;
         cout << "  Nivel " << q_niveles.front() << ":";
@@ -247,7 +245,7 @@ void Poblacion::escribir_por_niveles(string ind) {
       
       cout << " " << q_individuos.front();
       
-      // AÑADIR A LA COLA
+      // Añadir a la cola progenitores
       if(madre != "" and padre != ""){
         q_individuos.push(padre);
         q_individuos.push(madre);
@@ -255,7 +253,7 @@ void Poblacion::escribir_por_niveles(string ind) {
         q_niveles.push(q_niveles.front()+1);
       }
       
-      // POP
+      // Pop
       q_niveles.pop();
       q_individuos.pop();
     }
