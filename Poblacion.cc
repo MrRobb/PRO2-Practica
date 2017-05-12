@@ -221,50 +221,45 @@ void Poblacion::escribir_por_niveles(string ind) {
   if(it != pob.end()){
     
     // Inicializar
-    queue<string> q_recorridos;
     queue<string> q_individuos;
     queue<int> q_niveles;
-    queue<int> q_niveles_final;
     string madre;
     string padre;
+    int nivel_anterior = -1;
     
     // Push inicial
-    q_recorridos.push(ind);
     q_individuos.push(ind);
     q_niveles.push(0);
-    q_niveles_final.push(0);
     
     // BFS
-    while (!q_recorridos.empty()) {
-      madre = pob[q_recorridos.front()].consultar_madre();
-      padre = pob[q_recorridos.front()].consultar_padre();
+    while (!q_individuos.empty()) {
+      // PROGENITORES
+      madre = pob[q_individuos.front()].consultar_madre();
+      padre = pob[q_individuos.front()].consultar_padre();
       
+      
+      // PRINT
+      if(q_niveles.front() != nivel_anterior){
+        if(nivel_anterior != -1) cout << endl;
+        cout << "  Nivel " << q_niveles.front() << ":";
+        nivel_anterior = q_niveles.front();
+      }
+      
+      cout << " " << q_individuos.front();
+      
+      // AÑADIR A LA COLA
       if(madre != "" and padre != ""){
-        q_recorridos.push(padre);
-        q_recorridos.push(madre);
         q_individuos.push(padre);
         q_individuos.push(madre);
         q_niveles.push(q_niveles.front()+1);
         q_niveles.push(q_niveles.front()+1);
-        q_niveles_final.push(q_niveles.front()+1);
-        q_niveles_final.push(q_niveles.front()+1);
       }
+      
+      // POP
       q_niveles.pop();
-      q_recorridos.pop();
-    }
-    
-    // Print
-    int nivel = -1;
-    while (!q_individuos.empty()) {
-      if(nivel != q_niveles_final.front()){
-        nivel = q_niveles_final.front();
-        if(nivel != 0) cout << endl;
-        cout << "  Nivel " << nivel << ":";
-      }
-      cout << " " << q_individuos.front();
-      q_niveles_final.pop();
       q_individuos.pop();
     }
+    
     cout << endl;
     
   } else {
