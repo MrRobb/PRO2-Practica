@@ -132,44 +132,44 @@ bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
     string padre;
     
     q_individuos.push(ind);
-    i_escribir_padres(q_individuos, ind);
+    i_escribir_padres(q_individuos, ind); // q_individuos contiene el "arbol" de individuos
     
     // Comparar colas
     queue<string> q_final;
     
     while(not q_entrada.empty() and not q_individuos.empty()){
+      // Si coinciden, añadir directamente a la cola final
       if(q_entrada.front() == q_individuos.front()){
         q_final.push(q_entrada.front());
-        q_entrada.pop();
         q_individuos.pop();
       }
+      
+      // Si no coinciden, pero no es desconocido, es un error
       else if(q_entrada.front() != "$") {
         return false;
       }
+      
+      // Si no coinciden pero porque es deconocido en la entrada
       else {
-        // Encontrar siguiente elemento no desconocido de entrada
-        while(not q_entrada.empty() and q_entrada.front() == "$"){
-          q_entrada.pop();
-        }
-        
-        // Si toda la lista restante es desconocida
-        if(q_entrada.empty()){
-          while(not q_individuos.empty()){
-            if(q_individuos.front() != "$")q_final.push("*"+q_individuos.front()+"*");
-            else q_final.push("$");
-            q_individuos.pop();
+        // Insertar el pseudoarbol del individuo q_individuos.front() en la cola final
+        // Sabiendo que el numero de hojas es n+1
+        int finish_arbol = 1;
+        int dollar = 0;
+        while(dollar < finish_arbol){
+          if(q_individuos.front() == "$"){
+            ++dollar;
+            q_final.push("$");
           }
-        }
-        
-        // Si hay un elemento conocido
-        else {
-          while(not q_individuos.empty() and q_individuos.front() != q_entrada.front()){
-            if(q_individuos.front() != "$")q_final.push("*"+q_individuos.front()+"*");
-            else q_final.push("$");
-            q_individuos.pop();
+          else {
+            ++finish_arbol;
+            q_final.push("*" + q_individuos.front() + "*");
           }
+          q_individuos.pop();
         }
       }
+      
+      // Siguiente elemento
+      q_entrada.pop();
     }
     
     // PRINT

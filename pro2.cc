@@ -65,6 +65,7 @@ int main() {
       queue<string> q_entrada;
       string ind;
       
+      // Leer pseudoarbol como una cola (sabiendo que el numero de hojas es n+1)
       int finish_entrada = 1;
       int dollar = 0;
       while(dollar < finish_entrada){
