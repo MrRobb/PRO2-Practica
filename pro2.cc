@@ -62,22 +62,23 @@ int main() {
 
     // Completar arbol genealogico
     else if (s == "completar_arbol_genealogico"){
-      queue<string> q_entrada;
-      string ind;
-      
-      // Leer pseudoarbol como una cola (sabiendo que el numero de hojas es n+1)
-      int finish_entrada = 1;
-      int dollar = 0;
-      while(dollar < finish_entrada){
-        cin >> ind;
-        if(ind == "$") ++dollar;
-        else ++finish_entrada;
-        q_entrada.push(ind);
-      }
+      string ind; cin >> ind;
 
-      cout << "completar_arbol_genealogico " << q_entrada.front() << endl;
-      bool b = pob.completar_arbol_genealogico(q_entrada);
-      if(not b) cout << "  no es arbol parcial" << endl;
+      cout << "completar_arbol_genealogico " << ind << endl;
+      int b = pob.completar_arbol_genealogico(ind);
+      
+      // Error
+      if(b > 0) {
+        cout << "  no es arbol parcial" << endl;
+
+        // Desechar entrada (finish_arbol = 2 porque el individuo ya leido siempre sera un nombre diferente de $
+        int finish_arbol = b+1;
+        while(finish_arbol > 0){
+          cin >> ind;
+          if(ind == "$") --finish_arbol;
+          else ++finish_arbol;
+        }
+      }
     }
 
     // Escribir poblacion

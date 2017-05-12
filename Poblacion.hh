@@ -11,7 +11,6 @@
 #include "Individuo.hh"
 
 #ifndef NO_DIAGRAM      // ver explicacion en Cromosoma.hh
-#include <iostream>
 #include <map>
 #include <queue>
 #endif
@@ -87,7 +86,7 @@ public:
    \pre elem_arb_incom es una cola de elementos que representan el arbol parcial de una poblacion, si el arbol no es parcial se escribira un error: 'no es arbol parcial'.
    \post Se escribe el arbol completado con aquellos individuos de la poblacion que faltaban.
    */
-  bool completar_arbol_genealogico(queue<string> &elem_arb_incom);
+  int completar_arbol_genealogico(string ind);
 
   // Lectura y escritura
   

@@ -6,7 +6,7 @@
 //
 
 #include "Poblacion.hh"
-#include <queue>
+#include <iostream>
 
 Poblacion::Poblacion(){
 }
@@ -121,9 +121,9 @@ void Poblacion::reproducir(string madre, string padre, string hijo, const Especi
   }
 }
 
-bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
-  string ind = q_entrada.front();
+int Poblacion::completar_arbol_genealogico(string ind){
   map<string,Individuo>::const_iterator it = pob.find(ind);
+  int finish_entrada = 1;
   
   if(it != pob.end()){
     
@@ -137,27 +137,26 @@ bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
     // Comparar colas
     queue<string> q_final;
     
-    while(not q_entrada.empty() and not q_individuos.empty()){
-      // Si coinciden, añadir directamente a la cola final
-      if(q_entrada.front() == q_individuos.front()){
-        q_final.push(q_entrada.front());
+    while(finish_entrada != 0 and not q_individuos.empty()){
+      
+      // Si coinciden
+      if(ind != "$" and ind == q_individuos.front()){
+        ++finish_entrada;
+        q_final.push(ind);
         q_individuos.pop();
       }
       
-      // Si no coinciden, pero no es desconocido, es un error
-      else if(q_entrada.front() != "$") {
-        return false;
-      }
-      
-      // Si no coinciden pero porque es deconocido en la entrada
-      else {
+      // Si no coinciden pero es desconocido
+      else if (ind == "$"){
+        --finish_entrada;
+        
         // Insertar el pseudoarbol del individuo q_individuos.front() en la cola final
         // Sabiendo que el numero de hojas es n+1
+        
         int finish_arbol = 1;
-        int dollar = 0;
-        while(dollar < finish_arbol){
+        while(finish_arbol != 0){
           if(q_individuos.front() == "$"){
-            ++dollar;
+            --finish_arbol;
             q_final.push("$");
           }
           else {
@@ -168,8 +167,11 @@ bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
         }
       }
       
+      // Si no coinciden y son diferentes
+      else return finish_entrada;
+      
       // Siguiente elemento
-      q_entrada.pop();
+      if(finish_entrada != 0 and not q_individuos.empty()) cin >> ind;
     }
     
     // PRINT
@@ -185,9 +187,9 @@ bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
     }
     cout << endl;
   
-    return true;
+    return 0;
     
-  } else return false;
+  } else return finish_entrada;
 }
 
 void Poblacion::leer(const Especie &esp){
