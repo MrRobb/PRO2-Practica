@@ -123,35 +123,38 @@ void Poblacion::reproducir(string madre, string padre, string hijo, const Especi
 void Poblacion::completar_arbol_genealogico(string ind){
   map<string,Individuo>::const_iterator it = pob.find(ind);
   int finish_entrada = 1; // Contiene la diferencia entre hojas y nodos del pseudoarbol
+  bool correcto = true;
+  
   
   if(it != pob.end()){
     
+    // Inicializar
     queue<string> q_individuos;
     string madre;
     string padre;
     
+    // Push inicial y crear pseudoarbol correcto
     q_individuos.push(ind);
     i_escribir_padres(q_individuos, ind); // q_individuos contiene el pseudoarbol de individuos
     
-    // Comparar colas
-    queue<string> q_final;
-    bool correcto = true;
+    // COMPARAR pseudoarboles
+    queue<string> q_final;  // Aqui se almacena el pseudoarbol final (con los asteriscos)
+    
     while(correcto and finish_entrada != 0 and not q_individuos.empty()){
       
-      // Si coinciden
+      // Si coinciden -> Añadir individuo a la cola final
       if(ind != "$" and ind == q_individuos.front()){
         ++finish_entrada;
         q_final.push(ind);
         q_individuos.pop();
       }
       
-      // Si no coinciden pero es desconocido
+      
+      // Si no coinciden pero es desconocido -> Añadir todo el arbol debajo del individuo desconocido (y él mismo)
       else if (ind == "$"){
         --finish_entrada;
         
-        // Insertar el pseudoarbol del individuo q_individuos.front() en la cola final
-        // Sabiendo que el numero de hojas es n+1
-        
+        // Leer arbol debajo del inviduo desconocido (sabiendo que el numero de hojas es nodos+1)
         int finish_arbol = 1;
         while(finish_arbol != 0){
           if(q_individuos.front() == "$"){
@@ -175,7 +178,6 @@ void Poblacion::completar_arbol_genealogico(string ind){
     
     // PRINT si es correcto
     if(correcto){
-      // PRINT
       bool first = true;
       cout << "  ";
       while(not q_final.empty()){
@@ -188,11 +190,9 @@ void Poblacion::completar_arbol_genealogico(string ind){
       }
       cout << endl;
     }
-  }
+  } else correcto = false;
   
-  if(finish_entrada > 0){
-    cout << "  no es arbol parcial" << endl;
-  }
+  if(not correcto) cout << "  no es arbol parcial" << endl;
 }
 
 void Poblacion::leer(const Especie &esp){
@@ -224,46 +224,42 @@ void Poblacion::escribir_por_niveles(string ind) {
   if(it != pob.end()){
     
     // Inicializar
-    queue<string> q_aux;
-    queue< queue<string> > q_individuos;
+    queue<string> q_individuos;
     int nivel = 0;
     
     // Push inicial
-    q_aux.push(ind);
-    q_individuos.push(q_aux);
+    q_individuos.push("$"); // centinela
+    q_individuos.push(ind);
     
     // BFS
     while (!q_individuos.empty()) {
       
-      // Escribir nivel
-      cout << "  Nivel " << nivel << ":";
-      ++nivel;
+      // Guardar individuo
+      string ind = q_individuos.front();
+      q_individuos.pop();
       
-      queue<string> q_aux;
-      while (!q_individuos.front().empty()) {
-        
-        // Escribir individuos del nivel actual
-        ind = q_individuos.front().front();
+      // No es un centinela
+      if(ind != "$"){
         cout << " " << ind;
-        
-        // Hacer cola del siguiente nivel
         string padre = pob[ind].consultar_padre();
         string madre = pob[ind].consultar_madre();
-        
-        if(madre != "" and padre != ""){
-          q_aux.push(padre);
-          q_aux.push(madre);
+        if (padre != ""){
+          q_individuos.push(padre);
+          q_individuos.push(madre);
         }
-        
-        q_individuos.front().pop();
       }
-      cout << endl;
       
-      // Añadir siguiente nivel a la cola
-      if(not q_aux.empty()) q_individuos.push(q_aux);
-      
-      q_individuos.pop();
+      // Es un centinela pero hay mas individuos por comprobar
+      else if(not q_individuos.empty()) {
+        // Nuevo nivel
+        if(nivel != 0) cout << endl;
+        cout << "Nivel " << nivel << ":";
+        ++nivel;
+        // Añadir posible nuevo nivel
+        q_individuos.push("$");
+      }
     }
+    cout << endl;
     
   } else {
     cout << "  error" << endl;
