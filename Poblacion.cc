@@ -235,26 +235,28 @@ void Poblacion::escribir_por_niveles(string ind) {
     
     // BFS
     while (!q_individuos.empty()) {
-      // Progenitores
-      madre = pob[q_individuos.front()].consultar_madre();
-      padre = pob[q_individuos.front()].consultar_padre();
-      
+
+      ind = q_individuos.front();
+      int nivel = q_niveles.front();
       
       // Print
-      if(q_niveles.front() != nivel_anterior){
+      if(nivel != nivel_anterior){
         if(nivel_anterior != -1) cout << endl;
-        cout << "  Nivel " << q_niveles.front() << ":";
-        nivel_anterior = q_niveles.front();
+        cout << "  Nivel " << nivel << ":";
+        nivel_anterior = nivel;
       }
+      cout << " " << ind;
       
-      cout << " " << q_individuos.front();
+      // Buscar progenitores
+      madre = pob[ind].consultar_madre();
+      padre = pob[ind].consultar_padre();
       
       // Añadir a la cola progenitores
       if(madre != "" and padre != ""){
         q_individuos.push(padre);
         q_individuos.push(madre);
-        q_niveles.push(q_niveles.front()+1);
-        q_niveles.push(q_niveles.front()+1);
+        q_niveles.push(nivel+1);
+        q_niveles.push(nivel+1);
       }
       
       // Pop

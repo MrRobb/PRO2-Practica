@@ -51,7 +51,7 @@ int main() {
       pob.reproducir(madre, padre, hijo, esp);
     }
 
-    // Escribir arbol de un individuo
+    // Escribir arbol por niveles de un individuo
     else if (s == "escribir_arbol_genealogico"){
       string ind; cin >> ind;
       cout << "escribir_arbol_genealogico " << ind << endl;

@@ -115,8 +115,8 @@ public:
   void escribir_genotipo(string nombre) const;
   
   /** @brief Escribe un arbol de un individuo
-   \pre el string ind debe ser un individuo de la poblacion, en caso contrario dara error.
-   \post Escribe el arbol del individuo por niveles. Dentro del mismo nivel, el padre y la madre asociados (es decir, que hayan formado pareja reproductora) apareceran consecutivos, primero el padre y despues la madre.
+   \pre cierto.
+   \post Si esta en la poblacion, escribe el arbol del individuo por niveles, si no esta, escribe error. Dentro del mismo nivel, el padre y la madre asociados (es decir, que hayan formado pareja reproductora) apareceran consecutivos, primero el padre y despues la madre.
    */
   void escribir_por_niveles(string ind);
   
