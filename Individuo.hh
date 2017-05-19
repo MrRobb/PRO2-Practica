@@ -10,8 +10,8 @@
 #include "Cromosoma.hh" // redundante, pero necesario para el diagrama modular
 
 #ifndef NO_DIAGRAM      // ver explicacion en Cromosoma.hh
-#include <iostream>
 #include <vector>
+#include <iostream>
 #endif
 
 using namespace std;

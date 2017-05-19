@@ -6,7 +6,7 @@
 //
 
 #include "Poblacion.hh"
-#include <queue>
+#include <iostream>
 
 Poblacion::Poblacion(){
 }
@@ -44,11 +44,19 @@ void Poblacion::i_escribir_padres(queue<string> &q_individuos, string ind){
   }
 }
 
-void Poblacion::anadir_individuo(string nombre, const Individuo &ind){
+void Poblacion::anadir_individuo(string nombre, const Especie &esp){
+  // Ver si esta repetido
   map<string,Individuo>::iterator i = pob.find(nombre);
+
+  // Leer individuo y añadir
   if (i == pob.end()) {
+    Individuo(ind);
+    ind.leer(esp);
     pob[nombre] = ind;
-  } else {
+  }
+  
+  // Error
+  else {
     cout << "  error" << endl;
   }
 }
@@ -110,20 +118,11 @@ void Poblacion::reproducir(string madre, string padre, string hijo, const Especi
   else if(b == 1){
     cout << "  error" << endl;
   }
-  
-  // Leer entrada si hay error
-  if(b <= 1){
-    int N = esp.consultar_pares_cromosomas();
-    // Puedo usar b en el for ya que ya he entrado en el if y ya no me sirve para nada
-    for(int i = 0; i < 3*(N+1); ++i) {
-      cin >> b;
-    }
-  }
 }
 
-bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
-  string ind = q_entrada.front();
+void Poblacion::completar_arbol_genealogico(string ind){
   map<string,Individuo>::const_iterator it = pob.find(ind);
+  int finish_entrada = 1; // Contiene la diferencia entre hojas y nodos del pseudoarbol
   
   if(it != pob.end()){
     
@@ -132,69 +131,74 @@ bool Poblacion::completar_arbol_genealogico(queue<string> &q_entrada){
     string padre;
     
     q_individuos.push(ind);
-    i_escribir_padres(q_individuos, ind);
+    i_escribir_padres(q_individuos, ind); // q_individuos contiene el pseudoarbol de individuos
     
     // Comparar colas
     queue<string> q_final;
-    
-    while(not q_entrada.empty() and not q_individuos.empty()){
-      if(q_entrada.front() == q_individuos.front()){
-        q_final.push(q_entrada.front());
-        q_entrada.pop();
+    bool correcto = true;
+    while(correcto and finish_entrada != 0 and not q_individuos.empty()){
+      
+      // Si coinciden
+      if(ind != "$" and ind == q_individuos.front()){
+        ++finish_entrada;
+        q_final.push(ind);
         q_individuos.pop();
       }
-      else if(q_entrada.front() != "$") {
-        return false;
-      }
-      else {
-        // Encontrar siguiente elemento no desconocido de entrada
-        while(not q_entrada.empty() and q_entrada.front() == "$"){
-          q_entrada.pop();
-        }
+      
+      // Si no coinciden pero es desconocido
+      else if (ind == "$"){
+        --finish_entrada;
         
-        // Si toda la lista restante es desconocida
-        if(q_entrada.empty()){
-          while(not q_individuos.empty()){
-            if(q_individuos.front() != "$")q_final.push("*"+q_individuos.front()+"*");
-            else q_final.push("$");
-            q_individuos.pop();
-          }
-        }
+        // Insertar el pseudoarbol del individuo q_individuos.front() en la cola final
+        // Sabiendo que el numero de hojas es n+1
         
-        // Si hay un elemento conocido
-        else {
-          while(not q_individuos.empty() and q_individuos.front() != q_entrada.front()){
-            if(q_individuos.front() != "$")q_final.push("*"+q_individuos.front()+"*");
-            else q_final.push("$");
-            q_individuos.pop();
+        int finish_arbol = 1;
+        while(finish_arbol != 0){
+          if(q_individuos.front() == "$"){
+            --finish_arbol;
+            q_final.push("$");
           }
+          else {
+            ++finish_arbol;
+            q_final.push("*" + q_individuos.front() + "*");
+          }
+          q_individuos.pop();
         }
       }
+      
+      // Si no coinciden y son diferentes
+      else correcto = false;
+      
+      // Siguiente elemento
+      if(finish_entrada != 0 and not q_individuos.empty()) cin >> ind;
     }
     
-    // PRINT
-    bool first = true;
-    cout << "  ";
-    while(not q_final.empty()){
-      if(first){
-        cout << q_final.front();
-        first = false;
+    // PRINT si es correcto
+    if(correcto){
+      // PRINT
+      bool first = true;
+      cout << "  ";
+      while(not q_final.empty()){
+        if(first){
+          cout << q_final.front();
+          first = false;
+        }
+        else cout << ' ' << q_final.front();
+        q_final.pop();
       }
-      else cout << ' ' << q_final.front();
-      q_final.pop();
+      cout << endl;
     }
-    cout << endl;
+  }
   
-    return true;
-    
-  } else return false;
+  if(finish_entrada > 0){
+    cout << "  no es arbol parcial" << endl;
+  }
 }
 
 void Poblacion::leer(const Especie &esp){
   int M; cin >> M;
   for(int i = 0; i < M; ++i){
-    string nombre;
-    cin >> nombre;
+    string nombre; cin >> nombre;
     Individuo (ind);
     ind.leer(esp);
     pob[nombre] = ind;

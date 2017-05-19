@@ -11,7 +11,6 @@
 #include "Individuo.hh"
 
 #ifndef NO_DIAGRAM      // ver explicacion en Cromosoma.hh
-#include <iostream>
 #include <map>
 #include <queue>
 #endif
@@ -63,10 +62,10 @@ public:
   // Modificadoras
 
   /** @brief Añade un individuo sin ascendentes a la población
-   \pre ind es un individuo valido.
-   \post Si no se ha añadido correctamente saldra un mensaje de error.
+   \pre Se lee un individuo segun determina especificacion.
+   \post Si el individuo ya esta en la poblacion saldra un mensaje de error y no se añadira, sino se añade el individuo de la especie esp a la poblacion con el nombre pasado como parametro.
    */
-  void anadir_individuo(string nombre, const Individuo &ind);
+  void anadir_individuo(string nombre, const Especie &esp);
   
   /** @brief Reproduce dos individuos y añade el hijo a la población
    \pre El string madre, padre, son los nombres de los dos progenitores existentes en la poblacion a partir de los cuales se creara el individuo con nombre hijo, que antes no existia en la poblacion. Los padres deben ser de la especie esp y el hijo lo sera una vez creado.
@@ -87,7 +86,7 @@ public:
    \pre elem_arb_incom es una cola de elementos que representan el arbol parcial de una poblacion, si el arbol no es parcial se escribira un error: 'no es arbol parcial'.
    \post Se escribe el arbol completado con aquellos individuos de la poblacion que faltaban.
    */
-  bool completar_arbol_genealogico(queue<string> &elem_arb_incom);
+  void completar_arbol_genealogico(string ind);
 
   // Lectura y escritura
   

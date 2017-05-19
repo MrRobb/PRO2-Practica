@@ -39,10 +39,8 @@ int main() {
     // Añadir individuo
     if (s == "anadir_individuo") {
       string nombre; cin >> nombre;
-      Individuo(ind);
-      ind.leer(esp);
       cout << "anadir_individuo " << nombre << endl;
-      pob.anadir_individuo(nombre, ind);
+      pob.anadir_individuo(nombre, esp);
     }
 
     // Reproducir individuos
@@ -62,21 +60,9 @@ int main() {
 
     // Completar arbol genealogico
     else if (s == "completar_arbol_genealogico"){
-      queue<string> q_entrada;
-      string ind;
-      
-      int finish_entrada = 1;
-      int dollar = 0;
-      while(dollar < finish_entrada){
-        cin >> ind;
-        if(ind == "$") ++dollar;
-        else ++finish_entrada;
-        q_entrada.push(ind);
-      }
-
-      cout << "completar_arbol_genealogico " << q_entrada.front() << endl;
-      bool b = pob.completar_arbol_genealogico(q_entrada);
-      if(not b) cout << "  no es arbol parcial" << endl;
+      string ind; cin >> ind;
+      cout << "completar_arbol_genealogico " << ind << endl;
+      pob.completar_arbol_genealogico(ind);
     }
 
     // Escribir poblacion
@@ -90,11 +76,6 @@ int main() {
       string s; cin >> s;
       cout << "escribir_genotipo " << s << endl;
       pob.escribir_genotipo(s);
-    }
-
-    // Fin
-    else {
-      return 0;
     }
   }
   cout << "acabar" << endl;
