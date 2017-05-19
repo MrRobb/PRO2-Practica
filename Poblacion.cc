@@ -219,52 +219,51 @@ void Poblacion::escribir_genotipo(string nombre) const {
 }
 
 void Poblacion::escribir_por_niveles(string ind) {
+  // Mirar si esta en la poblacion
   map<string,Individuo>::const_iterator it = pob.find(ind);
   if(it != pob.end()){
     
     // Inicializar
-    queue<string> q_individuos;
-    queue<int> q_niveles;
-    string madre;
-    string padre;
-    int nivel_anterior = -1;
+    queue<string> q_aux;
+    queue< queue<string> > q_individuos;
+    int nivel = 0;
     
     // Push inicial
-    q_individuos.push(ind);
-    q_niveles.push(0);
+    q_aux.push(ind);
+    q_individuos.push(q_aux);
     
     // BFS
     while (!q_individuos.empty()) {
-
-      ind = q_individuos.front();
-      int nivel = q_niveles.front();
       
-      // Print
-      if(nivel != nivel_anterior){
-        if(nivel_anterior != -1) cout << endl;
-        cout << "  Nivel " << nivel << ":";
-        nivel_anterior = nivel;
+      // Escribir nivel
+      cout << "  Nivel " << nivel << ":";
+      ++nivel;
+      
+      queue<string> q_aux;
+      while (!q_individuos.front().empty()) {
+        
+        // Escribir individuos del nivel actual
+        ind = q_individuos.front().front();
+        cout << " " << ind;
+        
+        // Hacer cola del siguiente nivel
+        string padre = pob[ind].consultar_padre();
+        string madre = pob[ind].consultar_madre();
+        
+        if(madre != "" and padre != ""){
+          q_aux.push(padre);
+          q_aux.push(madre);
+        }
+        
+        q_individuos.front().pop();
       }
-      cout << " " << ind;
+      cout << endl;
       
-      // Buscar progenitores
-      madre = pob[ind].consultar_madre();
-      padre = pob[ind].consultar_padre();
+      // Añadir siguiente nivel a la cola
+      if(not q_aux.empty()) q_individuos.push(q_aux);
       
-      // Añadir a la cola progenitores
-      if(madre != "" and padre != ""){
-        q_individuos.push(padre);
-        q_individuos.push(madre);
-        q_niveles.push(nivel+1);
-        q_niveles.push(nivel+1);
-      }
-      
-      // Pop
-      q_niveles.pop();
       q_individuos.pop();
     }
-    
-    cout << endl;
     
   } else {
     cout << "  error" << endl;
