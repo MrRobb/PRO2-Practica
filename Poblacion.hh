@@ -47,6 +47,8 @@ private:
 
   void i_escribir_padres(queue<string> &q_individuos, string ind);
   
+  void anadir_pseudoarbol(queue<string> &q_final, queue<string> &q_individuos);
+  
 public:
 
   // Constructoras

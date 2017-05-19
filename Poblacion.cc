@@ -44,6 +44,21 @@ void Poblacion::i_escribir_padres(queue<string> &q_individuos, string ind){
   }
 }
 
+void Poblacion::anadir_pseudoarbol(queue<string> &q_final, queue<string> &q_individuos){
+  int finish_arbol = 1;
+  while(finish_arbol != 0){
+    if(q_individuos.front() == "$"){
+      --finish_arbol;
+      q_final.push("$");
+    }
+    else {
+      ++finish_arbol;
+      q_final.push("*" + q_individuos.front() + "*");
+    }
+    q_individuos.pop();
+  }
+}
+
 void Poblacion::anadir_individuo(string nombre, const Especie &esp){
   // Ver si esta repetido
   map<string,Individuo>::iterator i = pob.find(nombre);
@@ -122,7 +137,6 @@ void Poblacion::reproducir(string madre, string padre, string hijo, const Especi
 
 void Poblacion::completar_arbol_genealogico(string ind){
   map<string,Individuo>::const_iterator it = pob.find(ind);
-  int finish_entrada = 1; // Contiene la diferencia entre hojas y nodos del pseudoarbol
   bool correcto = true;
   
   
@@ -140,6 +154,7 @@ void Poblacion::completar_arbol_genealogico(string ind){
     // COMPARAR pseudoarboles
     queue<string> q_final;  // Aqui se almacena el pseudoarbol final (con los asteriscos)
     
+    int finish_entrada = 1; // Contiene la diferencia entre hojas y nodos del pseudoarbol
     while(correcto and finish_entrada != 0 and not q_individuos.empty()){
       
       // Si coinciden -> Añadir individuo a la cola final
@@ -149,24 +164,10 @@ void Poblacion::completar_arbol_genealogico(string ind){
         q_individuos.pop();
       }
       
-      
       // Si no coinciden pero es desconocido -> Añadir todo el arbol debajo del individuo desconocido (y él mismo)
       else if (ind == "$"){
         --finish_entrada;
-        
-        // Leer arbol debajo del inviduo desconocido (sabiendo que el numero de hojas es nodos+1)
-        int finish_arbol = 1;
-        while(finish_arbol != 0){
-          if(q_individuos.front() == "$"){
-            --finish_arbol;
-            q_final.push("$");
-          }
-          else {
-            ++finish_arbol;
-            q_final.push("*" + q_individuos.front() + "*");
-          }
-          q_individuos.pop();
-        }
+        anadir_pseudoarbol(q_final, q_individuos);
       }
       
       // Si no coinciden y son diferentes
@@ -178,14 +179,9 @@ void Poblacion::completar_arbol_genealogico(string ind){
     
     // PRINT si es correcto
     if(correcto){
-      bool first = true;
-      cout << "  ";
+      cout << " ";
       while(not q_final.empty()){
-        if(first){
-          cout << q_final.front();
-          first = false;
-        }
-        else cout << ' ' << q_final.front();
+        cout << ' ' << q_final.front();
         q_final.pop();
       }
       cout << endl;
@@ -253,7 +249,7 @@ void Poblacion::escribir_por_niveles(string ind) {
       else if(not q_individuos.empty()) {
         // Nuevo nivel
         if(nivel != 0) cout << endl;
-        cout << "Nivel " << nivel << ":";
+        cout << "  Nivel " << nivel << ":";
         ++nivel;
         // Añadir posible nuevo nivel
         q_individuos.push("$");
