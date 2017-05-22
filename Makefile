@@ -1,7 +1,7 @@
 OPCIONS = -D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Wno-uninitialized -Wno-sign-compare -std=c++11
 
-pro2.exe: pro2.o Poblacion.o Individuo.o Cromosoma.o Especie.o
-	g++ -o pro2.exe pro2.o Poblacion.o Individuo.o Cromosoma.o Especie.o
+pro2.pkg: pro2.o Poblacion.o Individuo.o Cromosoma.o Especie.o
+	g++ -o pro2.pkg pro2.o Poblacion.o Individuo.o Cromosoma.o Especie.o
 	rm *.o
 
 Especie.o: Especie.cc Especie.hh
